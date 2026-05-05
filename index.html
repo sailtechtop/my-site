@@ -27,22 +27,33 @@
     }
   </script>
   <style>
-    body { background-color: #0b111a; background-image: linear-gradient(rgba(108,182,255,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(108,182,255,0.04) 1px, transparent 1px); background-size: 40px 40px; font-family: Inter, ui-sans-serif, system-ui, sans-serif; color: #e6eef8; -webkit-font-smoothing: antialiased; }
-    ::-webkit-scrollbar { width: 6px; }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background-color: #0b111a;
+      background-image: linear-gradient(rgba(108,182,255,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(108,182,255,0.04) 1px, transparent 1px);
+      background-size: 40px 40px;
+      font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+      color: #e6eef8;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+    ::-webkit-scrollbar { width: 6px; height: 6px; }
     ::-webkit-scrollbar-track { background: #0b111a; }
     ::-webkit-scrollbar-thumb { background: #243244; border-radius: 999px; }
     .nav-blur { backdrop-filter: blur(14px) saturate(180%); -webkit-backdrop-filter: blur(14px) saturate(180%); background: rgba(11, 17, 26, 0.84); border-bottom: 1px solid rgba(108,182,255,0.08); }
+    .nav-inner { max-width: 1400px; margin: 0 auto; min-height: 80px; display: flex; align-items: center; justify-content: center; padding: 0 16px; }
+    .top-nav-scroll { width: 100%; overflow-x: auto; overflow-y: hidden; -webkit-overflow-scrolling: touch; scrollbar-width: none; display: flex; justify-content: center; }
+    .top-nav-scroll::-webkit-scrollbar { display: none; }
+    .top-nav-list { min-width: max-content; }
     .card { background: rgba(20, 28, 39, 0.94); border: 1px solid #243244; border-radius: 16px; transition: all .25s ease; }
     .card:hover { border-color: #3a5475; transform: translateY(-2px); box-shadow: 0 8px 32px rgba(0,0,0,0.34), 0 0 0 1px rgba(108,182,255,0.07); }
-    .video-card { background: rgba(20, 28, 39, 0.96); border: 1px solid #2b4667; border-radius: 18px; transition: all 0.3s ease; }
-    .video-card:hover { border-color: #6cb6ff; box-shadow: 0 0 36px rgba(108,182,255,0.10); }
     .tag { display: inline-flex; align-items: center; background: rgba(108,182,255,0.10); border: 1px solid rgba(108,182,255,0.18); border-radius: 999px; color: #9fd0ff; font-size: 13px; padding: 5px 11px; line-height: 1; white-space: nowrap; }
     .arrow-btn { width: 32px; height: 32px; border: 1px solid #2a394b; border-radius: 999px; display: flex; align-items: center; justify-content: center; color: #93a7be; font-size: 14px; transition: all .2s ease; flex-shrink: 0; }
     .card:hover .arrow-btn { background: rgba(108,182,255,0.10); border-color: #6cb6ff; color: #6cb6ff; }
     .widget { background: rgba(20, 28, 39, 0.94); border: 1px solid #243244; border-radius: 16px; padding: 20px; }
-    .widget-title { font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: #7d8ea5; margin-bottom: 16px; font-family: 'JetBrains Mono', monospace; }
-    .dot-live { width: 8px; height: 8px; border-radius: 999px; background: #6cb6ff; box-shadow: 0 0 8px #6cb6ff; animation: pulse 2s infinite; }
-    @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.45; } }
+    .widget-title { font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: #6f8197; margin-bottom: 14px; font-family: 'JetBrains Mono', monospace; }
     .bar { background: rgba(108,182,255,0.10); border-radius: 999px; overflow: hidden; }
     .bar-fill { background: linear-gradient(90deg, #29578d, #6cb6ff); border-radius: 999px; height: 100%; transition: width 1s ease; }
     .avatar-ring { background: conic-gradient(#6cb6ff 0%, #244a76 60%, #6cb6ff 100%); border-radius: 999px; padding: 2px; }
@@ -52,87 +63,117 @@
     .cat-item:hover { color: #e6eef8; }
     .iframe-wrap { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 12px; background: #0d1520; border: 1px solid #223247; }
     .iframe-wrap iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: none; }
+    .page-wrap { max-width: 1400px; margin: 0 auto; padding: 100px 16px 48px; }
+    .layout-grid { display: grid; grid-template-columns: 260px 1fr 300px; gap: 24px; align-items: start; }
+    .left-col, .right-col { position: sticky; top: 96px; }
+    .article-grid { display: grid; grid-template-columns: 1fr; gap: 16px; }
+    @media (min-width: 768px) {
+      .article-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+    @media (max-width: 1279px) {
+      .layout-grid { grid-template-columns: minmax(0, 1fr); }
+      .left-col, .right-col { position: static; top: auto; }
+      .left-col { order: 1; }
+      main { order: 2; }
+      .right-col { order: 3; }
+    }
+    @media (max-width: 767px) {
+      .nav-inner { min-height: 64px; padding: 10px 12px; justify-content: flex-start; }
+      .top-nav-scroll { justify-content: flex-start; }
+      .page-wrap { padding: 88px 12px 36px; }
+      .widget { padding: 16px; border-radius: 14px; }
+      .card { padding: 14px !important; border-radius: 14px; }
+      .tag { font-size: 12px; padding: 5px 9px; }
+      .arrow-btn { width: 30px; height: 30px; font-size: 13px; }
+      .cat-item { font-size: 14px; padding: 9px 0; }
+    }
   </style>
 </head>
 <body class="min-h-screen text-text">
 
-  <header class="nav-blur fixed top-0 left-0 right-0 z-50 h-20 flex items-center justify-center px-10">
-  
-  <nav>
-  <ul class="flex flex-row items-center gap-8 md:gap-12 whitespace-nowrap">
-    <li><a href="#" class="nav-filter text-[19px] font-bold text-white/90 hover:text-sky-400 transition-all hover:scale-105 inline-block">首页</a></li>
-    <li><a href="#" class="nav-filter text-[18px] font-bold text-white/90 hover:text-sky-400 transition-all hover:scale-105 inline-block">机场&VPS</a></li>
-    <li><a href="#" class="nav-filter text-[18px] font-bold text-white/90 hover:text-sky-400 transition-all hover:scale-105 inline-block">手机&eSIM</a></li>
-    <li><a href="#" class="nav-filter text-[18px] font-bold text-white/90 hover:text-sky-400 transition-all hover:scale-105 inline-block">银行&券商&交易所</a></li>
-    <li><a href="#" class="nav-filter text-[18px] font-bold text-white/90 hover:text-sky-400 transition-all hover:scale-105 inline-block">港美股&加密货币</a></li>
-    <li><a href="#" class="nav-filter text-[18px] font-bold text-white/90 hover:text-sky-400 transition-all hover:scale-105 inline-block">各类工具</a></li>
-  </ul>
-</nav>
+  <header class="nav-blur fixed top-0 left-0 right-0 z-50">
+    <div class="nav-inner">
+      <nav class="top-nav-scroll">
+        <ul class="top-nav-list flex flex-row items-center justify-center gap-5 md:gap-8 whitespace-nowrap px-1 sm:px-2">
+          <li><a href="#" class="nav-filter text-[16px] md:text-[19px] font-bold text-white/90 hover:text-sky-400 transition-all inline-block py-2">首页</a></li>
+          <li><a href="#" class="nav-filter text-[15px] md:text-[18px] font-bold text-white/90 hover:text-sky-400 transition-all inline-block py-2">机场&VPS</a></li>
+          <li><a href="#" class="nav-filter text-[15px] md:text-[18px] font-bold text-white/90 hover:text-sky-400 transition-all inline-block py-2">手机&eSIM</a></li>
+          <li><a href="#" class="nav-filter text-[15px] md:text-[18px] font-bold text-white/90 hover:text-sky-400 transition-all inline-block py-2">银行&券商&交易所</a></li>
+          <li><a href="#" class="nav-filter text-[15px] md:text-[18px] font-bold text-white/90 hover:text-sky-400 transition-all inline-block py-2">港美股&加密货币</a></li>
+          <li><a href="#" class="nav-filter text-[15px] md:text-[18px] font-bold text-white/90 hover:text-sky-400 transition-all inline-block py-2">各类工具</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-</header>
+  <div class="page-wrap">
+    <div class="layout-grid">
 
-  <div class="page-wrap max-w-[1400px] mx-auto px-4 pt-28 pb-12">
-    <div class="layout-grid grid gap-5" style="grid-template-columns: minmax(0,2.2fr) minmax(0,7.2fr) minmax(0,2.6fr); align-items:start;">
-
-      <aside class="left-col flex flex-col gap-4 sticky top-24">
+      <aside class="left-col flex flex-col gap-4">
         <div class="widget">
           <div class="flex flex-col items-center text-center gap-3">
             <div class="avatar-ring" style="width:64px;height:64px;">
               <div class="avatar-inner w-full h-full flex items-center justify-center overflow-hidden">
-                <img src="logo.jpg" alt="Logo" class="w-full h-full object-cover rounded-full">
+                <img src="./logo.jpg" alt="小帆船 Logo" class="w-[86%] h-[86%] object-contain rounded-full" onerror="this.onerror=null;this.src='./image.jpg';">
               </div>
             </div>
             <div>
-              <div class="font-display font-semibold text-text text-[19px]">小帆船</div>
-              <div class="text-dim mt-1 text-[14px]">数字出海全链路实操</div>
+              <div class="font-display font-semibold text-text text-[18px] md:text-[19px]">小帆船</div>
+              <div class="text-dim mt-1 text-[13px] md:text-[14px]">数字出海全链路实操</div>
             </div>
             <div class="flex gap-2 flex-wrap justify-center mt-1">
               <span class="tag">eSIM</span><span class="tag">VPN</span><span class="tag">券商</span><span class="tag">交易所</span><span class="tag">加密货币</span>
             </div>
-            <p class="text-dim mt-1 text-[15px] leading-8">专注数字出海全链路实操，让跨境金融与网络连接更简单。</p>
+            <p class="text-dim mt-1 text-[14px] md:text-[15px] leading-7 md:leading-8">数字出海全链路实操，让跨境金融与网络连接更简单。</p>
           </div>
         </div>
 
         <div class="widget">
-  <div class="widget-title">分类</div>
-  <div class="cat-item nav-filter group hover:pl-3 transition-all duration-300">
-    <span class="group-hover:text-accent transition-colors">机场&VPS</span>
-  </div>
-  <div class="cat-item nav-filter group hover:pl-3 transition-all duration-300">
-    <span class="group-hover:text-accent transition-colors">手机&eSIM</span>
-  </div>
-  <div class="cat-item nav-filter group hover:pl-3 transition-all duration-300">
-    <span class="group-hover:text-accent transition-colors">银行&券商&交易所</span>
-  </div>
-  <div class="cat-item nav-filter group hover:pl-3 transition-all duration-300">
-    <span class="group-hover:text-accent transition-colors">港美股&加密货币</span>
-  </div>
-  <div class="cat-item nav-filter group hover:pl-3 transition-all duration-300">
-    <span class="group-hover:text-accent transition-colors">各类工具</span>
-  </div>
-</div>
+          <div class="widget-title flex items-center gap-2">
+            <img src="./logo.jpg" alt="logo" class="w-4 h-4 rounded-full object-cover" onerror="this.style.display='none'">
+            <span>分类</span>
+          </div>
+          <div class="cat-item nav-filter group hover:pl-3 transition-all duration-300">
+            <span class="group-hover:text-accent transition-colors">机场&VPS</span>
+          </div>
+          <div class="cat-item nav-filter group hover:pl-3 transition-all duration-300">
+            <span class="group-hover:text-accent transition-colors">手机&eSIM</span>
+          </div>
+          <div class="cat-item nav-filter group hover:pl-3 transition-all duration-300">
+            <span class="group-hover:text-accent transition-colors">银行&券商&交易所</span>
+          </div>
+          <div class="cat-item nav-filter group hover:pl-3 transition-all duration-300">
+            <span class="group-hover:text-accent transition-colors">港美股&加密货币</span>
+          </div>
+          <div class="cat-item nav-filter group hover:pl-3 transition-all duration-300">
+            <span class="group-hover:text-accent transition-colors">各类工具</span>
+          </div>
+        </div>
 
-        <div class="widget ">
-          <div class="widget-title opacity-50 scale-90 origin-left">联系 & 社区</div>
+        <div class="widget">
+          <div class="widget-title opacity-50 scale-90 origin-left flex items-center gap-2">
+            <img src="./logo.jpg" alt="logo" class="w-4 h-4 rounded-full object-cover opacity-90" onerror="this.style.display='none'">
+            <span>联系 & 社区</span>
+          </div>
           <div class="flex flex-col">
-            <a href="https://t.me/vipxiaofanchuan" target="_blank" class="cat-item group flex items-center justify-between !py-2.5 border-none">
+            <a href="https://t.me/vipxiaofanchuan" target="_blank" rel="noopener noreferrer" class="cat-item group flex items-center justify-between !py-2.5 border-none">
               <span class="flex items-center gap-2.5">
                 <i class="fab fa-telegram text-[16px] text-sky-400"></i>
-                <span class="text-[15px] group-hover:text-white transition-colors">Telegram 交流群</span>
+                <span class="text-[14px] md:text-[15px] group-hover:text-white transition-colors">Telegram 交流群</span>
               </span>
               <i class="fas fa-angle-right text-dim text-[12px] opacity-0 group-hover:opacity-100 transition-all"></i>
             </a>
-            <a href="https://www.youtube.com/@CNXiaoFanChuan" target="_blank" class="cat-item group flex items-center justify-between !py-2.5 border-none">
+            <a href="https://www.youtube.com/@CNXiaoFanChuan" target="_blank" rel="noopener noreferrer" class="cat-item group flex items-center justify-between !py-2.5 border-none">
               <span class="flex items-center gap-2.5">
                 <i class="fab fa-youtube text-[16px] text-red-500"></i>
-                <span class="text-[15px] group-hover:text-white transition-colors">YouTube 频道</span>
+                <span class="text-[14px] md:text-[15px] group-hover:text-white transition-colors">YouTube 频道</span>
               </span>
               <i class="fas fa-angle-right text-dim text-[12px] opacity-0 group-hover:opacity-100 transition-all"></i>
             </a>
             <a href="mailto:qiao4830@hotmail.com" class="cat-item group flex items-center justify-between !py-2.5 border-none">
               <span class="flex items-center gap-2.5">
                 <i class="fas fa-envelope text-[16px] text-yellow-500"></i>
-                <span class="text-[15px] group-hover:text-white transition-colors">商务合作</span>
+                <span class="text-[14px] md:text-[15px] group-hover:text-white transition-colors">商务合作</span>
               </span>
               <i class="fas fa-angle-right text-dim text-[15px] opacity-0 group-hover:opacity-100 transition-all"></i>
             </a>
@@ -140,49 +181,58 @@
         </div>
       </aside>
 
-      <main class="flex flex-col gap-5">
+      <main class="flex flex-col gap-5 min-w-0">
         <div class="article-grid grid grid-cols-1 md:grid-cols-2 gap-4"></div>
-        
-        <div id="load-more-container" class="flex justify-center mt-10 mb-20">
-          <button id="load-more-btn" class="tag px-10 py-4 bg-surface border-border hover:border-accent hover:text-accent transition-all cursor-pointer text-[15px] font-bold">
+
+        <div id="load-more-container" class="flex justify-center mt-6 md:mt-10 mb-10 md:mb-20">
+          <button id="load-more-btn" class="tag px-6 md:px-10 py-3 md:py-4 bg-surface border-border hover:border-accent hover:text-accent transition-all cursor-pointer text-[14px] md:text-[15px] font-bold">
             加载更多精彩内容
           </button>
         </div>
       </main>
 
-      <aside class="right-col flex flex-col gap-4 sticky top-24">
+      <aside class="right-col flex flex-col gap-4">
         <div class="widget">
-          <div class="widget-title">热门文章</div>
-          <div id="hot-posts-container" class="flex flex-col gap-3"></div>
+          <div class="widget-title flex items-center gap-2">
+            <img src="./logo.jpg" alt="logo" class="w-4 h-4 rounded-full object-cover" onerror="this.style.display='none'">
+            <span>热门文章</span>
+          </div>
+          <div id="hot-posts-container" class="flex flex-col gap-2"></div>
         </div>
 
         <div class="widget">
-          <div class="widget-title">本月流量来源</div>
+          <div class="widget-title flex items-center gap-2">
+            <img src="./logo.jpg" alt="logo" class="w-4 h-4 rounded-full object-cover" onerror="this.style.display='none'">
+            <span>本月流量来源</span>
+          </div>
           <div class="flex flex-col gap-4">
-            <div><div class="flex justify-between mb-1.5"><span class="text-dim text-[15px]">搜索引擎</span><span class="text-accent text-[15px]">58%</span></div><div class="bar h-2"><div class="bar-fill" style="width:58%"></div></div></div>
-            <div><div class="flex justify-between mb-1.5"><span class="text-dim text-[15px]">YouTube</span><span class="text-accent text-[15px]">24%</span></div><div class="bar h-2"><div class="bar-fill" style="width:24%"></div></div></div>
-            <div><div class="flex justify-between mb-1.5"><span class="text-dim text-[15px]">直接访问</span><span class="text-accent text-[15px]">12%</span></div><div class="bar h-2"><div class="bar-fill" style="width:58%"></div></div></div>
+            <div><div class="flex justify-between mb-1.5"><span class="text-dim text-[14px] md:text-[15px]">搜索引擎</span><span class="text-accent text-[14px] md:text-[15px]">58%</span></div><div class="bar h-2"><div class="bar-fill" style="width:58%"></div></div></div>
+            <div><div class="flex justify-between mb-1.5"><span class="text-dim text-[14px] md:text-[15px]">YouTube</span><span class="text-accent text-[14px] md:text-[15px]">24%</span></div><div class="bar h-2"><div class="bar-fill" style="width:24%"></div></div></div>
+            <div><div class="flex justify-between mb-1.5"><span class="text-dim text-[14px] md:text-[15px]">直接访问</span><span class="text-accent text-[14px] md:text-[15px]">12%</span></div><div class="bar h-2"><div class="bar-fill" style="width:12%"></div></div></div>
           </div>
         </div>
 
         <div class="widget">
-          <div class="widget-title opacity-60">极客工具箱</div>
+          <div class="widget-title opacity-60 flex items-center gap-2">
+            <img src="./logo.jpg" alt="logo" class="w-4 h-4 rounded-full object-cover" onerror="this.style.display='none'">
+            <span>极客工具箱</span>
+          </div>
           <div class="grid grid-cols-2 gap-3 mt-4">
-            <a href="https://scamalytics.com/" target="_blank" class="flex flex-col items-center justify-center py-5 px-2 rounded-xl bg-slate-800/20 border border-slate-800 hover:border-sky-500/50 hover:bg-slate-800/40 transition-all group text-center">
-              <i class="fas fa-shield-virus text-sky-400 text-2xl mb-3"></i>
-              <span class="text-[14px] text-slate-200 group-hover:text-white font-bold">IP 风险</span>
+            <a href="https://scamalytics.com/" target="_blank" rel="noopener noreferrer" class="flex flex-col items-center justify-center py-4 md:py-5 px-2 rounded-xl bg-slate-800/20 border border-slate-800 hover:border-sky-500/50 hover:bg-slate-800/40 transition-all group text-center">
+              <i class="fas fa-shield-virus text-sky-400 text-xl md:text-2xl mb-2 md:mb-3"></i>
+              <span class="text-[13px] md:text-[14px] text-slate-200 group-hover:text-white font-bold">IP 风险</span>
             </a>
-            <a href="https://whoer.net/" target="_blank" class="flex flex-col items-center justify-center py-5 px-2 rounded-xl bg-slate-800/20 border border-slate-800 hover:border-purple-500/50 hover:bg-slate-800/40 transition-all group text-center">
-              <i class="fas fa-user-secret text-purple-400 text-2xl mb-3"></i>
-              <span class="text-[14px] text-slate-200 group-hover:text-white font-bold">匿名查询</span>
+            <a href="https://whoer.net/" target="_blank" rel="noopener noreferrer" class="flex flex-col items-center justify-center py-4 md:py-5 px-2 rounded-xl bg-slate-800/20 border border-slate-800 hover:border-purple-500/50 hover:bg-slate-800/40 transition-all group text-center">
+              <i class="fas fa-user-secret text-purple-400 text-xl md:text-2xl mb-2 md:mb-3"></i>
+              <span class="text-[13px] md:text-[14px] text-slate-200 group-hover:text-white font-bold">匿名查询</span>
             </a>
-            <a href="https://www.xe.com/currencyconverter/" target="_blank" class="flex flex-col items-center justify-center py-5 px-2 rounded-xl bg-slate-800/20 border border-slate-800 hover:border-yellow-500/50 hover:bg-slate-800/40 transition-all group text-center">
-              <i class="fas fa-comments-dollar text-yellow-400 text-2xl mb-3"></i>
-              <span class="text-[14px] text-slate-200 group-hover:text-white font-bold">实时汇率</span>
+            <a href="https://www.xe.com/currencyconverter/" target="_blank" rel="noopener noreferrer" class="flex flex-col items-center justify-center py-4 md:py-5 px-2 rounded-xl bg-slate-800/20 border border-slate-800 hover:border-yellow-500/50 hover:bg-slate-800/40 transition-all group text-center">
+              <i class="fas fa-comments-dollar text-yellow-400 text-xl md:text-2xl mb-2 md:mb-3"></i>
+              <span class="text-[13px] md:text-[14px] text-slate-200 group-hover:text-white font-bold">实时汇率</span>
             </a>
-            <a href="https://browserleaks.com/" target="_blank" class="flex flex-col items-center justify-center py-5 px-2 rounded-xl bg-slate-800/20 border border-slate-800 hover:border-emerald-500/50 hover:bg-slate-800/40 transition-all group text-center">
-              <i class="fas fa-fingerprint text-emerald-400 text-2xl mb-3"></i>
-              <span class="text-[14px] text-slate-200 group-hover:text-white font-bold">指纹检测</span>
+            <a href="https://browserleaks.com/" target="_blank" rel="noopener noreferrer" class="flex flex-col items-center justify-center py-4 md:py-5 px-2 rounded-xl bg-slate-800/20 border border-slate-800 hover:border-emerald-500/50 hover:bg-slate-800/40 transition-all group text-center">
+              <i class="fas fa-fingerprint text-emerald-400 text-xl md:text-2xl mb-2 md:mb-3"></i>
+              <span class="text-[13px] md:text-[14px] text-slate-200 group-hover:text-white font-bold">指纹检测</span>
             </a>
           </div>
         </div>
@@ -190,16 +240,13 @@
     </div>
   </div>
 
- <!-- 第一步：确保 data.js 在逻辑脚本之前加载 -->
-<script src="data.js"></script>
+  <script src="data.js"></script>
 
-<script>
-    // 初始化配置
+  <script>
     let currentIndex = 8;
     const increment = 8;
-    let currentFilteredPosts = []; 
+    let currentFilteredPosts = [];
 
-    // 渲染文章列表函数
     function renderArticles(isAppend = false) {
       const container = document.querySelector('.article-grid');
       const loadMoreBtn = document.getElementById('load-more-container');
@@ -213,101 +260,91 @@
       const itemsToShow = currentFilteredPosts.slice(isAppend ? currentIndex - increment : 0, currentIndex);
 
       const html = itemsToShow.map(post => {
-        // --- 核心修复逻辑 ---
         let previewText = "";
-        
-        // 优先使用我们在 data.js 中定义的简洁 summary，如果没有则使用 description
-        if (post.summary) {
-            previewText = post.summary;
-        } else if (post.description && post.description.includes('<div')) {
-            previewText = "德国号码 + 德国原生流量 + 德区应用环境，国行手机数字出海全链路实操方案实测。";
-        } else {
-            previewText = post.description || "暂无简介";
-        }
-        // --------------------
 
-        // 在最外层包裹 <a> 标签，并添加 target="_blank"
+        if (post.description && post.description.includes('<div')) {
+          previewText = '德国号码 + 德国原生流量 + 德区应用环境，国行手机数字出海全链路实操方案实测。';
+        } else {
+          previewText = post.description || '暂无简介';
+        }
+
         return `
-        <a href="details.html?id=${post.youtubeId}" target="_blank" style="text-decoration: none; color: inherit; display: block;">
-          <article class="card p-4 flex flex-col gap-3">
-            <div class="flex items-center gap-2">
-              <span class="tag">${post.category}</span>
-              <span class="text-dim uppercase text-[12px] font-mono">${post.date}</span>
+        <article class="card p-4 md:p-4 flex flex-col gap-3 min-w-0">
+          <div class="flex items-center gap-2 flex-wrap">
+            <span class="tag">${post.category}</span>
+            <span class="text-dim uppercase text-[11px] md:text-[12px] font-mono">${post.date}</span>
+          </div>
+
+          <div class="flex-1 min-w-0">
+            <h3 class="font-display font-semibold text-text mb-2 text-[16px] md:text-[18px] leading-snug break-words">${post.title}</h3>
+            <p class="text-dim text-[14px] md:text-[15px] line-clamp-2 leading-6">${previewText}</p>
+          </div>
+
+          <div class="iframe-wrap mb-2">
+            <iframe src="https://www.youtube.com/embed/${post.youtubeId}" loading="lazy" allowfullscreen></iframe>
+          </div>
+
+          <div class="flex items-center justify-between gap-3">
+            <div class="flex gap-1.5 flex-wrap min-w-0">
+              ${post.tags ? post.tags.map(tag => `<span class="tag" style="background:rgba(108,182,255,0.05);">${tag}</span>`).join('') : ''}
             </div>
-            <div class="flex-1">
-              <h3 class="font-display font-semibold text-text mb-2 text-[18px] leading-snug">${post.title}</h3>
-              <p class="text-dim text-[15px] line-clamp-2">${previewText}</p>
-            </div>
-            <div class="iframe-wrap mb-2">
-              <!-- 注意：iframe 内部点击不会触发外层的 a 标签跳转，这符合用户看视频的习惯 -->
-              <iframe src="https://www.youtube.com/embed/${post.youtubeId}" allowfullscreen></iframe>
-            </div>
-            <div class="flex items-center justify-between">
-              <div class="flex gap-1.5 flex-wrap">
-                ${post.tags ? post.tags.map(tag => `<span class="tag" style="background:rgba(108,182,255,0.05);">${tag}</span>`).join('') : ''}
-              </div>
-              
-              <div class="arrow-btn" title="查看视频说明">
-                <i class="fas fa-arrow-right"></i>
-              </div>
-            </div>
-          </article>
-        </a>
-      `}).join('');
+
+            <a href="details.html?id=${post.youtubeId}" class="arrow-btn" title="查看视频说明">
+              <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </article>`;
+      }).join('');
 
       container.insertAdjacentHTML('beforeend', html);
 
-      // 控制加载更多按钮显隐
       if (loadMoreBtn) {
         loadMoreBtn.style.display = (currentIndex >= currentFilteredPosts.length) ? 'none' : 'flex';
       }
     }
 
-    // 渲染右侧热门文章
     function renderHotPosts() {
       const hotContainer = document.getElementById('hot-posts-container');
       if (!hotContainer || typeof posts === 'undefined') return;
-      
+
       hotContainer.innerHTML = posts.slice(0, 4).map((post, i) => `
-        <div class="flex gap-3 items-start group cursor-pointer" onclick="window.location.href='details.html?id=${post.youtubeId}'">
-          <span class="font-display text-accentDim group-hover:text-accent shrink-0 text-[22px] leading-none mt-[1px]">0${i+1}</span>
-          <span class="text-dim group-hover:text-text text-[15px] leading-snug line-clamp-2">${post.title}</span>
+        <div class="flex gap-3 items-start group cursor-pointer py-1" onclick="window.location.href='details.html?id=${post.youtubeId}'">
+          <span class="font-display text-accentDim group-hover:text-accent shrink-0 text-[15px] md:text-[18px] leading-none mt-[2px]">0${i + 1}</span>
+          <span class="text-dim group-hover:text-text text-[13px] md:text-[14px] leading-[1.45] line-clamp-2">${post.title}</span>
         </div>
       `).join('');
     }
 
-    // 页面加载后的主逻辑
     document.addEventListener('DOMContentLoaded', () => {
-      // 检查 data.js 数据是否成功加载
       if (typeof posts !== 'undefined' && Array.isArray(posts)) {
         currentFilteredPosts = [...posts];
         renderArticles();
         renderHotPosts();
       } else {
-        console.error("data.js 加载失败或格式错误");
+        console.error('data.js 加载失败或格式错误');
       }
 
-      // 绑定加载更多事件
       document.getElementById('load-more-btn')?.addEventListener('click', () => {
         currentIndex += increment;
         renderArticles(true);
       });
-      
-      // 绑定分类过滤点击事件
+
       document.querySelectorAll('.nav-filter').forEach(link => {
         link.addEventListener('click', (e) => {
           e.preventDefault();
-          // 兼容 <a> 标签和 <div> 分类项的文字提取
-          let cat = link.tagName === 'A' ? link.innerText.trim() : (link.querySelector('span')?.innerText.trim() || "");
-          let filterCat = (cat === "港美股/加密货币") ? "港美股&加密货币" : cat;
 
-          // 执行过滤
-          currentFilteredPosts = (filterCat === '首页' || filterCat === '小帆船' || !filterCat) ? [...posts] : posts.filter(p => p.category === filterCat);
+          let cat = link.tagName === 'A' ? link.innerText.trim() : (link.querySelector('span')?.innerText.trim() || '');
+          let filterCat = (cat === '港美股/加密货币') ? '港美股&加密货币' : cat;
+
+          currentFilteredPosts = (filterCat === '首页' || filterCat === '小帆船' || !filterCat)
+            ? [...posts]
+            : posts.filter(p => p.category === filterCat);
+
           renderArticles(false);
           window.scrollTo({ top: 0, behavior: 'smooth' });
         });
       });
     });
-</script>
+  </script>
 </body>
 </html>
