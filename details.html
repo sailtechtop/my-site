@@ -3,129 +3,731 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>视频说明 - 小帆船数字出海</title>
+  <title>视频说明 - 小帆船·SailTech</title>
+  <meta name="description" content="小帆船·SailTech 视频详情页，聚焦数字出海、VPS、eSIM、跨境金融与工具实操。" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Syne:wght@700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            bg: '#0b111a',
+            surface: '#141c27',
+            border: '#243244',
+            accent: '#6cb6ff',
+            accentSoft: '#9fd0ff',
+            text: '#e6eef8',
+            dim: '#a4b4c8',
+            muted: '#7d8ea5',
+            danger: '#f87171'
+          },
+          fontFamily: {
+            sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+            display: ['Syne', 'sans-serif']
+          }
+        }
+      }
+    };
+  </script>
+
   <style>
-    body { background-color: #0b111a; background-image: linear-gradient(rgba(108,182,255,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(108,182,255,0.04) 1px, transparent 1px); background-size: 40px 40px; color: #e6eef8; font-family: 'Inter', sans-serif; }
-    .nav-blur { backdrop-filter: blur(14px); background: rgba(11, 17, 26, 0.84); border-bottom: 1px solid rgba(108,182,255,0.08); }
-    .detail-card { background: rgba(20, 28, 39, 0.94); border: 1px solid #243244; border-radius: 24px; box-shadow: 0 20px 50px rgba(0,0,0,0.3); }
-    .iframe-wrap { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 16px; background: #000; border: 1px solid #2b4667; }
-    .iframe-wrap iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: none; }
-    .tag { display: inline-flex; align-items: center; background: rgba(108,182,255,0.10); border: 1px solid rgba(108,182,255,0.18); border-radius: 999px; color: #9fd0ff; font-size: 13px; padding: 5px 12px; }
-    .content-text { line-height: 1.8; color: #a4b4c8; font-size: 16px; }
-    .btn-back { transition: all 0.3s ease; }
-    .btn-back:hover { transform: translateX(-5px); color: #6cb6ff; }
+    :root {
+      --accent: #6cb6ff;
+      --bg: #0b111a;
+      --surface: rgba(20, 28, 39, 0.94);
+      --border: #243244;
+      --text: #e6eef8;
+      --dim: #a4b4c8;
+      --danger: #f87171;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background-color: var(--bg);
+      background-image:
+        linear-gradient(rgba(108,182,255,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(108,182,255,0.04) 1px, transparent 1px);
+      background-size: 40px 40px;
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+      transition: background-color .25s ease, color .25s ease;
+    }
+
+    .nav-blur {
+      backdrop-filter: blur(16px) saturate(180%);
+      -webkit-backdrop-filter: blur(16px) saturate(180%);
+      background: rgba(11, 17, 26, 0.78);
+      border-bottom: 1px solid rgba(108,182,255,0.08);
+      box-shadow: 0 6px 24px rgba(0, 0, 0, 0.18);
+      transition: background .25s ease, border-color .25s ease, box-shadow .25s ease;
+    }
+
+    .detail-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+      transition: background .25s ease, border-color .25s ease, box-shadow .25s ease;
+    }
+
+    .iframe-wrap {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+      border-radius: 18px;
+      background: #000;
+      border: 1px solid #2b4667;
+      transition: border-color .25s ease, box-shadow .25s ease;
+    }
+
+    .iframe-wrap iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .content-text {
+      line-height: 1.8;
+      color: var(--dim);
+      font-size: 16px;
+      word-break: break-word;
+      overflow-wrap: anywhere;
+    }
+
+    .content-text p,
+    .content-text ul,
+    .content-text ol,
+    .content-text section,
+    .content-text .safe-block {
+      margin-bottom: 1.25rem !important;
+      display: block;
+    }
+
+    .content-text ul {
+      list-style-type: disc !important;
+      padding-left: 1.5rem !important;
+    }
+
+    .content-text ol {
+      list-style-type: decimal !important;
+      padding-left: 1.5rem !important;
+    }
+
+    .content-text li {
+      margin-bottom: 0.55rem !important;
+    }
+
+    .content-text strong,
+    .content-text b {
+      color: #fff !important;
+      font-weight: 700;
+    }
+
+    .content-text h2,
+    .content-text h3 {
+      color: var(--accent) !important;
+      font-weight: 700;
+      margin-top: 1.8rem;
+      margin-bottom: 0.9rem;
+      line-height: 1.4;
+    }
+
+    .content-text a {
+      color: #8ec5ff;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .content-text a:hover {
+      color: #b7ddff;
+    }
+
+    .content-text .bg-white\/5,
+    .content-text .bg-black\/20,
+    .content-text .bg-accentDim\/20,
+    .content-text .safe-panel {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 14px;
+      padding: 14px 16px;
+    }
+
+    .content-text .font-mono {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      background: rgba(108,182,255,0.10);
+      border: 1px solid rgba(108,182,255,0.18);
+      border-radius: 999px;
+      color: #9fd0ff;
+      font-size: 13px;
+      padding: 6px 14px;
+      line-height: 1.1;
+      transition: all .2s ease;
+    }
+
+    .btn-back,
+    .theme-toggle {
+      transition: all .2s ease;
+    }
+
+    .btn-back:hover {
+      transform: translateX(-4px);
+      color: var(--accent);
+    }
+
+    .theme-toggle {
+      height: 40px;
+      padding: 0 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(108,182,255,0.14);
+      background: rgba(255,255,255,0.03);
+      color: rgba(230,238,248,0.86);
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .theme-toggle:hover {
+      border-color: rgba(108,182,255,0.28);
+      color: #ffffff;
+      background: rgba(108,182,255,0.08);
+    }
+
+    .status-card {
+      background: rgba(20, 28, 39, 0.94);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 28px 22px;
+      color: var(--dim);
+      transition: background .25s ease, border-color .25s ease, color .25s ease;
+    }
+
+    .status-card.error {
+      border-color: rgba(248, 113, 113, 0.35);
+      background: rgba(127, 29, 29, 0.12);
+      color: #fecaca;
+    }
+
+    .skeleton {
+      background: linear-gradient(90deg, rgba(255,255,255,0.04), rgba(255,255,255,0.08), rgba(255,255,255,0.04));
+      background-size: 200% 100%;
+      animation: loading 1.4s infinite linear;
+    }
+
+    @keyframes loading {
+      0% { background-position: 200% 0; }
+      100% { background-position: -200% 0; }
+    }
+
+    ::-webkit-scrollbar { width: 6px; height: 6px; }
+    ::-webkit-scrollbar-track { background: #0b111a; }
+    ::-webkit-scrollbar-thumb { background: #243244; border-radius: 10px; }
+
+    body.light-theme {
+      background-color: #f6f9fc;
+      background-image:
+        linear-gradient(rgba(80,110,150,0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(80,110,150,0.06) 1px, transparent 1px);
+      color: #243447;
+    }
+
+    body.light-theme .nav-blur {
+      background: rgba(246, 249, 252, 0.82);
+      border-bottom: 1px solid rgba(120, 145, 175, 0.18);
+      box-shadow: 0 8px 28px rgba(88, 110, 139, 0.08);
+    }
+
+    body.light-theme .detail-card {
+      background: rgba(255, 255, 255, 0.92);
+      border-color: #dbe6f2;
+      box-shadow: 0 18px 44px rgba(100, 122, 153, 0.10);
+    }
+
+    body.light-theme .iframe-wrap {
+      border-color: #d6e3f0;
+      box-shadow: 0 0 0 1px rgba(214,227,240,0.65);
+    }
+
+    body.light-theme .content-text {
+      color: #506276;
+    }
+
+    body.light-theme .content-text strong,
+    body.light-theme .content-text b {
+      color: #1b2a3a !important;
+    }
+
+    body.light-theme .content-text h2,
+    body.light-theme .content-text h3 {
+      color: #2d6fb3 !important;
+    }
+
+    body.light-theme .content-text a {
+      color: #2d6fb3;
+    }
+
+    body.light-theme .content-text a:hover {
+      color: #1f5e9f;
+    }
+
+    body.light-theme .content-text .bg-white\/5,
+    body.light-theme .content-text .bg-black\/20,
+    body.light-theme .content-text .bg-accentDim\/20,
+    body.light-theme .content-text .safe-panel {
+      background: #f8fbff;
+      border: 1px solid #dbe6f2;
+    }
+
+    body.light-theme .tag {
+      background: rgba(66, 133, 209, 0.08);
+      border-color: rgba(66, 133, 209, 0.18);
+      color: #386796;
+    }
+
+    body.light-theme .btn-back {
+      color: #33475b !important;
+    }
+
+    body.light-theme .btn-back:hover {
+      color: #2d6fb3 !important;
+    }
+
+    body.light-theme .theme-toggle {
+      background: rgba(255,255,255,0.75);
+      border-color: #d5e2ef;
+      color: #3f536b;
+    }
+
+    body.light-theme .theme-toggle:hover {
+      background: #ffffff;
+      border-color: #bdd1e6;
+      color: #27425f;
+    }
+
+    body.light-theme .status-card {
+      background: rgba(255,255,255,0.92);
+      border-color: #dbe6f2;
+      color: #5b6d82;
+    }
+
+    body.light-theme .status-card.error {
+      border-color: rgba(220, 38, 38, 0.18);
+      background: rgba(254, 242, 242, 0.96);
+      color: #b91c1c;
+    }
+
+    body.light-theme .skeleton {
+      background: linear-gradient(90deg, rgba(217,228,240,0.55), rgba(236,242,248,0.95), rgba(217,228,240,0.55));
+      background-size: 200% 100%;
+    }
+
+    body.light-theme ::-webkit-scrollbar-track { background: #eef3f8; }
+    body.light-theme ::-webkit-scrollbar-thumb { background: #c7d6e6; }
+
+    body.light-theme #post-date,
+    body.light-theme footer p,
+    body.light-theme .text-white\/40 {
+      color: #7b8ea4 !important;
+    }
+
+    body.light-theme #post-title,
+    body.light-theme .text-white {
+      color: #1a2a3a !important;
+    }
+
+    body.light-theme #post-summary,
+    body.light-theme .text-white\/80 {
+      color: #506276 !important;
+    }
+
+    body.light-theme footer {
+      border-color: #dbe6f2 !important;
+    }
+
+    body.light-theme .border-white\/10 {
+      border-color: #dbe6f2 !important;
+    }
+
+    @media (max-width: 767px) {
+      .detail-card {
+        border-radius: 18px;
+      }
+
+      .content-text {
+        font-size: 15px;
+      }
+
+      .theme-toggle {
+        height: 36px;
+        padding: 0 12px;
+        font-size: 13px;
+      }
+    }
   </style>
 </head>
 <body class="min-h-screen pb-20">
+  <header class="nav-blur sticky top-0 z-50 h-16 flex items-center px-4 md:px-6">
+    <div class="w-full max-w-5xl mx-auto flex items-center justify-between gap-3">
+      <a href="index.html" class="btn-back flex items-center gap-2 text-white/80 font-semibold transition-all">
+        <i class="fas fa-chevron-left"></i>
+        <span>返回实操列表</span>
+      </a>
 
-  <!-- 顶部导航 -->
-  <header class="nav-blur sticky top-0 z-50 h-16 flex items-center px-6 md:px-10">
-    <a href="index.html" class="btn-back flex items-center gap-2 text-white/80 font-semibold">
-      <i class="fas fa-chevron-left"></i> 返回实操列表
-    </a>
+      <button id="theme-toggle" class="theme-toggle" type="button" aria-label="切换主题">
+        <i class="fas fa-sun mr-2"></i>
+        <span id="theme-toggle-label">浅色</span>
+      </button>
+    </div>
   </header>
 
-  <main class="max-w-5xl mx-auto px-4 pt-10">
+  <main class="max-w-5xl mx-auto px-4 pt-8 md:pt-10">
     <div id="content-loader">
-        <!-- 初始加载状态 -->
-        <div class="animate-pulse flex flex-col gap-6">
-            <div class="h-10 bg-surface rounded w-3/4"></div>
-            <div class="h-[400px] bg-surface rounded-2xl"></div>
+      <div class="space-y-6">
+        <div class="h-10 rounded w-3/4 skeleton"></div>
+        <div class="h-[240px] md:h-[420px] rounded-2xl skeleton"></div>
+        <div class="detail-card p-6 md:p-10">
+          <div class="space-y-4">
+            <div class="h-5 rounded w-1/4 skeleton"></div>
+            <div class="h-5 rounded w-full skeleton"></div>
+            <div class="h-5 rounded w-5/6 skeleton"></div>
+            <div class="h-5 rounded w-2/3 skeleton"></div>
+          </div>
         </div>
+      </div>
     </div>
 
+    <div id="error-area" class="hidden"></div>
+
     <div id="content-area" class="detail-card p-6 md:p-10 hidden">
-        <!-- 分类与日期 -->
-        <div class="flex items-center justify-between mb-6">
-            <div id="post-category" class="tag"></div>
-            <div id="post-date" class="text-muted font-mono text-sm"></div>
-        </div>
+      <div class="flex items-center justify-between gap-4 mb-6 flex-wrap">
+        <div id="post-category" class="tag"></div>
+        <div id="post-date" class="text-white/40 font-mono text-sm"></div>
+      </div>
 
-        <!-- 标题 -->
-        <h1 id="post-title" class="text-2xl md:text-4xl font-bold mb-8 leading-tight text-white"></h1>
+      <h1 id="post-title" class="text-2xl md:text-4xl font-bold mb-8 leading-tight text-white"></h1>
 
-        <!-- 视频容器 -->
-        <div class="iframe-wrap mb-10">
-            <iframe id="post-video" src="" allow="autoplay; fullscreen" allowfullscreen></iframe>
-        </div>
+      <div class="iframe-wrap mb-10">
+        <iframe
+          id="post-video"
+          src=""
+          title="YouTube 视频播放器"
+          loading="lazy"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen>
+        </iframe>
+      </div>
 
-        <!-- 正文说明 -->
-        <div class="space-y-10">
-            <section>
-                <h2 class="text-xl font-bold text-accent flex items-center gap-2 mb-4">
-                    <i class="fas fa-file-alt"></i> 核心说明
-                </h2>
-                <div id="post-description" class="content-text bg-white/5 p-6 rounded-xl border border-white/5"></div>
-            </section>
+      <div class="space-y-10">
+        <section>
+          <h2 class="text-xl font-bold text-white flex items-center gap-2 mb-6 border-l-4 border-accent pl-4">
+            实操深度拆解
+          </h2>
+          <div id="post-summary" class="text-white/80 leading-8 mb-6 hidden"></div>
+          <div id="post-description" class="content-text"></div>
+        </section>
 
-            <section>
-                <h2 class="text-xl font-bold text-accent flex items-center gap-2 mb-4">
-                    <i class="fas fa-terminal"></i> 关键标签
-                </h2>
-                <div id="post-tags" class="flex gap-2 flex-wrap"></div>
-            </section>
+        <section id="post-tags" class="flex gap-2 flex-wrap"></section>
 
-            <!-- 底部引导 -->
-            <footer class="pt-10 border-t border-border mt-16 text-center">
-                <p class="text-muted mb-6">如果你觉得这个实操有帮助，欢迎在 YouTube 评论区交流</p>
-                <div class="flex justify-center gap-4">
-                    <a href="https://t.me/vipxiaofanchuan" target="_blank" class="tag bg-sky-500/10 border-sky-500/20 text-sky-400 py-3 px-6">
-                        <i class="fab fa-telegram mr-2"></i> 加入 Telegram 交流群
-                    </a>
-                </div>
-            </footer>
-        </div>
+        <footer class="pt-10 border-t border-white/10 mt-10 text-center">
+          <p class="text-white/40 mb-6">本实操由 小帆船·SailTech 原创分享</p>
+          <a
+            href="https://t.me/vipxiaofanchuan"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="tag py-3 px-6 bg-sky-500/10 border-sky-500/20 text-sky-400"
+          >
+            <i class="fab fa-telegram mr-2"></i>
+            加入 Telegram 交流群
+          </a>
+        </footer>
+      </div>
     </div>
   </main>
 
-  <!-- 引入数据库 -->
   <script src="data.js"></script>
 
   <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      // 1. 获取 URL 中的 ID 参数
-      const urlParams = new URLSearchParams(window.location.search);
-      const videoId = urlParams.get('id');
+    function getStoredTheme() {
+      const savedTheme = localStorage.getItem('theme');
+      if (savedTheme === 'light' || savedTheme === 'dark') return savedTheme;
+      return 'dark';
+    }
 
-      if (!videoId || typeof posts === 'undefined') {
-        window.location.href = 'index.html';
+    function applyTheme(theme) {
+      document.body.classList.toggle('light-theme', theme === 'light');
+      localStorage.setItem('theme', theme);
+
+      const label = document.getElementById('theme-toggle-label');
+      const button = document.getElementById('theme-toggle');
+      if (!label || !button) return;
+
+      if (theme === 'light') {
+        label.textContent = '深色';
+        button.querySelector('i').className = 'fas fa-moon mr-2';
+      } else {
+        label.textContent = '浅色';
+        button.querySelector('i').className = 'fas fa-sun mr-2';
+      }
+    }
+
+    function escapeHtml(value) {
+      return String(value ?? '')
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+    }
+
+    function showError(message, extra = '') {
+      const loader = document.getElementById('content-loader');
+      const errorArea = document.getElementById('error-area');
+      const contentArea = document.getElementById('content-area');
+
+      if (loader) loader.style.display = 'none';
+      if (contentArea) contentArea.classList.add('hidden');
+
+      errorArea.className = 'status-card error';
+      errorArea.innerHTML = `
+        <div class="text-lg font-bold text-white mb-3">内容加载失败</div>
+        <p class="mb-3">${escapeHtml(message)}</p>
+        ${extra ? `<p class="text-sm text-white/60">${escapeHtml(extra)}</p>` : ''}
+        <div class="mt-6">
+          <a href="index.html" class="tag">返回首页</a>
+        </div>
+      `;
+    }
+
+    function sanitizeHtml(html) {
+      if (typeof html !== 'string' || !html.trim()) {
+        return '<p>暂无说明</p>';
+      }
+
+      const template = document.createElement('template');
+      template.innerHTML = html;
+
+      const allowedTags = new Set([
+        'DIV', 'SECTION', 'P', 'H2', 'H3', 'UL', 'OL', 'LI',
+        'B', 'STRONG', 'A', 'BR', 'SPAN'
+      ]);
+
+      const allowedClasses = new Set([
+        'space-y-4', 'space-y-6', 'text-dim', 'leading-relaxed', 'text-accent',
+        'font-bold', 'text-lg', 'mb-2', 'mb-3', 'mt-2', 'mt-4', 'mt-1',
+        'bg-white/5', 'p-4', 'rounded-xl', 'border', 'border-white/10',
+        'list-disc', 'list-decimal', 'pl-5', 'space-y-1', 'text-sm',
+        'text-muted', 'italic', 'border-t', 'border-border', 'pt-4',
+        'text-success', 'font-mono', 'bg-accentDim/20', 'p-3', 'rounded',
+        'grid', 'grid-cols-1', 'md:grid-cols-2', 'md:grid-cols-3', 'gap-4',
+        'bg-black/20', 'mb-1', 'safe-panel', 'safe-block'
+      ]);
+
+      const isSafeUrl = (value) => {
+        try {
+          const url = new URL(value, window.location.href);
+          return ['http:', 'https:', 'mailto:'].includes(url.protocol);
+        } catch {
+          return false;
+        }
+      };
+
+      function cleanNode(node) {
+        if (node.nodeType === Node.TEXT_NODE) {
+          return;
+        }
+
+        if (node.nodeType !== Node.ELEMENT_NODE) {
+          node.remove();
+          return;
+        }
+
+        const tag = node.tagName.toUpperCase();
+
+        for (const child of [...node.childNodes]) {
+          cleanNode(child);
+        }
+
+        if (!allowedTags.has(tag)) {
+          node.replaceWith(...node.childNodes);
+          return;
+        }
+
+        for (const attr of [...node.attributes]) {
+          const name = attr.name.toLowerCase();
+          const value = attr.value;
+
+          if (name.startsWith('on')) {
+            node.removeAttribute(attr.name);
+            continue;
+          }
+
+          if (name === 'style' || name === 'id') {
+            node.removeAttribute(attr.name);
+            continue;
+          }
+
+          if (tag === 'A') {
+            if (name === 'href') {
+              if (!isSafeUrl(value)) {
+                node.removeAttribute('href');
+              }
+              continue;
+            }
+            if (name === 'target') {
+              node.setAttribute('target', '_blank');
+              continue;
+            }
+            if (name === 'rel') {
+              node.setAttribute('rel', 'noopener noreferrer');
+              continue;
+            }
+            if (name === 'class') {
+              node.removeAttribute('class');
+              continue;
+            }
+            node.removeAttribute(attr.name);
+            continue;
+          }
+
+          if (name === 'class') {
+            const safeClasses = value
+              .split(/\s+/)
+              .filter(Boolean)
+              .filter(cls => allowedClasses.has(cls));
+            if (safeClasses.length) {
+              node.setAttribute('class', safeClasses.join(' '));
+            } else {
+              node.removeAttribute('class');
+            }
+            continue;
+          }
+
+          node.removeAttribute(attr.name);
+        }
+
+        if (tag === 'A') {
+          if (!node.getAttribute('href')) {
+            const span = document.createElement('span');
+            span.textContent = node.textContent || '';
+            node.replaceWith(span);
+            return;
+          }
+          node.setAttribute('rel', 'noopener noreferrer');
+          node.setAttribute('target', '_blank');
+        }
+      }
+
+      for (const child of [...template.content.childNodes]) {
+        cleanNode(child);
+      }
+
+      const sanitized = template.innerHTML.trim();
+      return sanitized || '<p>暂无说明</p>';
+    }
+
+    function renderTags(tags) {
+      const tagsContainer = document.getElementById('post-tags');
+      if (!tagsContainer) return;
+
+      if (!Array.isArray(tags) || tags.length === 0) {
+        tagsContainer.innerHTML = '';
         return;
       }
 
-      // 2. 从 data.js 中查找对应的视频数据
-      const post = posts.find(p => p.youtubeId === videoId);
+      tagsContainer.innerHTML = tags
+        .map(tag => `<span class="tag"># ${escapeHtml(tag)}</span>`)
+        .join('');
+    }
 
-      if (post) {
-        // 3. 填充内容
-        document.title = `${post.title} - 小帆船实操说明`;
-        document.getElementById('post-title').innerText = post.title;
-        document.getElementById('post-category').innerText = post.category;
-        document.getElementById('post-date').innerText = post.date;
-        document.getElementById('post-description').innerHTML = post.description || "暂无详细说明，请参考视频内操作演示。";
-        document.getElementById('post-video').src = `https://www.youtube.com/embed/${post.youtubeId}?autoplay=1`;
-        
-        // 渲染标签
-        const tagsContainer = document.getElementById('post-tags');
-        if (post.tags) {
-            tagsContainer.innerHTML = post.tags.map(t => `<span class="tag"># ${t}</span>`).join('');
-        }
+    function setVideoSrc(youtubeId) {
+      const iframe = document.getElementById('post-video');
+      if (!iframe) return;
 
-        // 4. 显示内容区域，隐藏加载器
-        document.getElementById('content-loader').classList.add('hidden');
-        document.getElementById('content-area').classList.remove('hidden');
-      } else {
-        document.getElementById('content-loader').innerHTML = `
-            <div class="text-center py-20">
-                <h2 class="text-2xl font-bold mb-4">⚠️ 视频去远航了</h2>
-                <p class="text-dim mb-8">没找到对应的说明页面，请返回首页查看其它内容。</p>
-                <a href="index.html" class="tag px-8 py-3 bg-accent text-bg font-bold">返回首页</a>
-            </div>
-        `;
+      const isHttp = window.location.protocol === 'http:' || window.location.protocol === 'https:';
+      const originParam = isHttp ? `&origin=${encodeURIComponent(window.location.origin)}` : '';
+      iframe.src = `https://www.youtube.com/embed/${encodeURIComponent(youtubeId)}?rel=0${originParam}`;
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      applyTheme(getStoredTheme());
+
+      const themeToggle = document.getElementById('theme-toggle');
+      themeToggle?.addEventListener('click', () => {
+        const nextTheme = document.body.classList.contains('light-theme') ? 'dark' : 'light';
+        applyTheme(nextTheme);
+      });
+
+      const urlParams = new URLSearchParams(window.location.search);
+      const videoId = urlParams.get('id');
+
+      if (!videoId) {
+        showError('缺少视频参数 id。', '请从首页文章卡片重新进入详情页。');
+        return;
       }
+
+      if (typeof posts === 'undefined' || !Array.isArray(posts)) {
+        showError('data.js 加载失败或格式不正确。', '请确认 data.js 与 details.html 位于同级目录，且 posts 为有效数组。');
+        return;
+      }
+
+      const post = posts.find(p => String(p.youtubeId || '') === String(videoId));
+
+      if (!post) {
+        showError('没有找到对应文章。', `当前请求的 id 为：${videoId}`);
+        return;
+      }
+
+      const title = String(post.title || '未命名文章');
+      const category = String(post.category || '未分类');
+      const date = String(post.date || '');
+      const summary = String(post.summary || '').trim();
+      const safeDescription = sanitizeHtml(post.description || '');
+
+      document.title = `${title} - 小帆船·SailTech`;
+
+      const titleEl = document.getElementById('post-title');
+      const categoryEl = document.getElementById('post-category');
+      const dateEl = document.getElementById('post-date');
+      const summaryEl = document.getElementById('post-summary');
+      const descriptionEl = document.getElementById('post-description');
+
+      if (titleEl) titleEl.textContent = title;
+      if (categoryEl) categoryEl.textContent = category.replace(/&/g, '/');
+      if (dateEl) dateEl.textContent = date;
+
+      if (summary && summaryEl) {
+        summaryEl.textContent = summary;
+        summaryEl.classList.remove('hidden');
+      }
+
+      if (descriptionEl) {
+        descriptionEl.innerHTML = safeDescription;
+      }
+
+      renderTags(post.tags);
+      setVideoSrc(post.youtubeId || '');
+
+      document.getElementById('content-loader').style.display = 'none';
+      document.getElementById('error-area').className = 'hidden';
+      document.getElementById('content-area').classList.remove('hidden');
     });
   </script>
 </body>

@@ -3,11 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>小帆船—数字出海全链路实操</title>
+  <title>小帆船 · 官方博客</title>
+
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Syne:wght@500;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+
   <script>
     tailwind.config = {
       theme: {
@@ -23,418 +25,544 @@
             text: '#e6eef8',
             dim: '#a4b4c8',
             muted: '#7d8ea5',
-            success: '#7dd3fc',
+            success: '#7dd3fc'
           },
           fontFamily: {
             sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
             mono: ['JetBrains Mono', 'monospace'],
-            display: ['Syne', 'sans-serif'],
+            display: ['Syne', 'sans-serif']
           }
         }
       }
     }
   </script>
+
   <style>
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      background-color: #0b111a;
-      background-image: linear-gradient(rgba(108,182,255,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(108,182,255,0.04) 1px, transparent 1px);
-      background-size: 40px 40px;
-      font-family: Inter, ui-sans-serif, system-ui, sans-serif;
-      color: #e6eef8;
-      -webkit-font-smoothing: antialiased;
-      overflow-x: hidden;
-    }
-    ::-webkit-scrollbar { width: 6px; height: 6px; }
-    ::-webkit-scrollbar-track { background: #0b111a; }
-    ::-webkit-scrollbar-thumb { background: #243244; border-radius: 999px; }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
 
-    .nav-blur {
-      backdrop-filter: blur(16px) saturate(180%);
-      -webkit-backdrop-filter: blur(16px) saturate(180%);
-      background: rgba(11, 17, 26, 0.78);
-      border-bottom: 1px solid rgba(108,182,255,0.08);
-      box-shadow: 0 6px 24px rgba(0, 0, 0, 0.18);
-    }
-    .nav-shell {
-      max-width: 1400px;
-      margin: 0 auto;
-      min-height: 76px;
-      display: grid;
-      grid-template-columns: auto 1fr auto;
-      align-items: center;
-      gap: 24px;
-      padding: 0 18px;
-    }
-    .brand-mark {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      text-decoration: none;
-      min-width: 120px;
-      flex-shrink: 0;
-    }
-    .brand-logo-wrap {
-      width: 34px;
-      height: 34px;
-      border-radius: 999px;
-      padding: 2px;
-      background: linear-gradient(135deg, rgba(108,182,255,0.85), rgba(36,74,118,0.9));
-      box-shadow: 0 0 0 1px rgba(108,182,255,0.12);
-      flex-shrink: 0;
-    }
-    .brand-logo {
-      width: 100%;
-      height: 100%;
-      border-radius: 999px;
-      object-fit: contain;
-      background: #0b111a;
-      padding: 3px;
-    }
-    .brand-text {
-      font-size: 16px;
-      font-weight: 700;
-      letter-spacing: 0.01em;
-      color: rgba(230,238,248,0.96);
-      white-space: nowrap;
-    }
-    .top-nav-scroll {
-      overflow-x: auto;
-      overflow-y: hidden;
-      -webkit-overflow-scrolling: touch;
-      scrollbar-width: none;
-      display: flex;
-      justify-content: center;
-      min-width: 0;
-    }
-    .top-nav-scroll::-webkit-scrollbar { display: none; }
-    .top-nav-frame {
-      display: inline-flex;
-      align-items: center;
-      padding: 6px;
-      border-radius: 999px;
-      border: 1px solid rgba(108, 182, 255, 0.10);
-      background: rgba(255, 255, 255, 0.015);
-      box-shadow: inset 0 1px 0 rgba(255,255,255,0.03), 0 0 0 1px rgba(7, 12, 18, 0.22);
-    }
-    .top-nav-list {
-      min-width: max-content;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      margin: 0 auto;
-      padding: 0;
-      list-style: none;
-    }
-    .nav-link {
-      position: relative;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      height: 40px;
-      padding: 0 14px;
-      border-radius: 999px;
-      color: rgba(230,238,248,0.76);
-      font-size: 15px;
-      font-weight: 600;
-      letter-spacing: 0;
-      text-decoration: none;
-      transition: all 0.22s ease;
-      white-space: nowrap;
-    }
-    .nav-link:hover {
-      color: rgba(230,238,248,0.96);
-      background: rgba(108,182,255,0.06);
-    }
-    .nav-link.is-active {
-      color: #eef6ff;
-      background: rgba(108,182,255,0.14);
-      box-shadow: inset 0 0 0 1px rgba(108,182,255,0.14), 0 4px 14px rgba(108,182,255,0.06);
-    }
-    .nav-link.is-active::after {
-      content: "";
-      position: absolute;
-      left: 12px;
-      right: 12px;
-      bottom: 6px;
-      height: 2px;
-      border-radius: 999px;
-      background: linear-gradient(90deg, rgba(108,182,255,0.15), #6cb6ff, rgba(108,182,255,0.15));
-    }
+  :root {
+    --bg: #0b111a;
+    --bg-grid: rgba(108,182,255,0.04);
+    --surface: rgba(20, 28, 39, 0.94);
+    --surface-soft: rgba(255, 255, 255, 0.015);
+    --border: #243244;
+    --border-soft: rgba(108,182,255,0.10);
+    --border-strong: #3a5475;
+    --accent: #6cb6ff;
+    --accent-soft: #9fd0ff;
+    --accent-dim: #1c436e;
+    --text: #e6eef8;
+    --dim: #a4b4c8;
+    --muted: #7d8ea5;
+    --shadow: rgba(0,0,0,0.28);
+    --nav-bg: rgba(11, 17, 26, 0.78);
+    --tag-bg: rgba(108,182,255,0.10);
+    --tag-border: rgba(108,182,255,0.18);
+    --tag-soft-bg: rgba(108,182,255,0.05);
+    --arrow-bg: rgba(108,182,255,0.05);
+    --arrow-border: rgba(108,182,255,0.18);
+    --bar-bg: rgba(108,182,255,0.10);
+    --card-hover-ring: rgba(108,182,255,0.07);
+    --divider: #1b2532;
+    --tool-bg: rgba(30, 41, 59, 0.20);
+    --tool-border: rgba(51, 65, 85, 0.95);
+    --input-pill: rgba(108,182,255,0.14);
+  }
 
-    .card {
-      background: rgba(20, 28, 39, 0.94);
-      border: 1px solid #243244;
-      border-radius: 16px;
-      transition: all .25s ease;
-    }
-    .card:hover {
-      border-color: #3a5475;
-      transform: translateY(-2px);
-      box-shadow: 0 8px 32px rgba(0,0,0,0.34), 0 0 0 1px rgba(108,182,255,0.07);
-    }
-    .tag {
-      display: inline-flex;
-      align-items: center;
-      background: rgba(108,182,255,0.10);
-      border: 1px solid rgba(108,182,255,0.18);
-      border-radius: 999px;
-      color: #9fd0ff;
-      font-size: 13px;
-      padding: 5px 11px;
-      line-height: 1;
-      white-space: nowrap;
-    }
-    .arrow-btn {
-      width: 32px;
-      height: 32px;
-      border: 1px solid #2a394b;
-      border-radius: 999px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #93a7be;
-      font-size: 14px;
-      transition: all .2s ease;
-      flex-shrink: 0;
-    }
-    .card:hover .arrow-btn {
-      background: rgba(108,182,255,0.10);
-      border-color: #6cb6ff;
-      color: #6cb6ff;
-    }
-    .widget {
-      background: rgba(20, 28, 39, 0.94);
-      border: 1px solid #243244;
-      border-radius: 16px;
-      padding: 20px;
-    }
-    .widget-title {
-      font-size: 11px;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: #6f8197;
-      margin-bottom: 14px;
-      font-family: 'JetBrains Mono', monospace;
-    }
-    .bar {
-      background: rgba(108,182,255,0.10);
-      border-radius: 999px;
-      overflow: hidden;
-    }
-    .bar-fill {
-      background: linear-gradient(90deg, #29578d, #6cb6ff);
-      border-radius: 999px;
-      height: 100%;
-      transition: width 1s ease;
-    }
-    .avatar-ring {
-      background: conic-gradient(#6cb6ff 0%, #244a76 60%, #6cb6ff 100%);
-      border-radius: 999px;
-      padding: 2px;
-    }
-    .avatar-inner {
-      background: #0b111a;
-      border-radius: 999px;
-      padding: 3px;
-    }
-    .cat-item {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 10px 0;
-      border-bottom: 1px solid #1b2532;
-      font-size: 15px;
-      color: #a4b4c8;
-      cursor: pointer;
-      transition: color 0.2s ease;
-    }
-    .cat-item:last-child { border-bottom: none; }
-    .cat-item:hover { color: #e6eef8; }
-    .iframe-wrap {
-      position: relative;
-      padding-bottom: 56.25%;
-      height: 0;
-      overflow: hidden;
-      border-radius: 12px;
-      background: #0d1520;
-      border: 1px solid #223247;
-    }
-    .iframe-wrap iframe {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      border: none;
-    }
-    .page-wrap {
-      max-width: 1400px;
-      margin: 0 auto;
-      padding: 100px 16px 48px;
-    }
-    .layout-grid {
-      display: grid;
-      grid-template-columns: minmax(0,2.2fr) minmax(0,7.2fr) minmax(0,2.6fr);
-      gap: 20px;
-      align-items: start;
-    }
-    .left-col, .right-col {
-      position: sticky;
-      top: 96px;
-    }
-    .article-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 16px;
-    }
+  body.light-theme {
+  --bg: #f5f8fc;
+  --bg-grid: rgba(80,110,160,0.06);
+  --surface: rgba(255, 255, 255, 0.96);
+  --surface-soft: rgba(80,110,160,0.05);
+  --border: #d8e2ef;
+  --border-soft: rgba(80,110,160,0.16);
+  --border-strong: #aebfd4;
+  --accent: #2f7de1;
+  --accent-soft: #2f7de1;
+  --accent-dim: #5f86b8;
+  --text: #182536;
+  --dim: #3f536b;
+  --muted: #60748d;
+  --shadow: rgba(20,40,70,0.10);
+  --nav-bg: rgba(245, 248, 252, 0.88);
+  --tag-bg: rgba(47,125,225,0.10);
+  --tag-border: rgba(47,125,225,0.18);
+  --tag-soft-bg: rgba(47,125,225,0.06);
+  --arrow-bg: rgba(47,125,225,0.06);
+  --arrow-border: rgba(47,125,225,0.18);
+  --bar-bg: rgba(47,125,225,0.14);
+  --card-hover-ring: rgba(47,125,225,0.08);
+  --divider: #e2eaf3;
+  --tool-bg: rgba(255,255,255,0.96);
+  --tool-border: #d7e1ec;
+  --input-pill: rgba(47,125,225,0.12);
+}
 
-    @media (min-width: 768px) {
-      .article-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-    }
+  body {
+    margin: 0;
+    background-color: var(--bg);
+    background-image:
+      linear-gradient(var(--bg-grid) 1px, transparent 1px),
+      linear-gradient(90deg, var(--bg-grid) 1px, transparent 1px);
+    background-size: 40px 40px;
+    font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+    color: var(--text);
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+    transition: background-color .25s ease, color .25s ease;
+  }
 
-    @media (min-width: 1200px) {
+  ::-webkit-scrollbar { width: 6px; height: 6px; }
+  ::-webkit-scrollbar-track { background: var(--bg); }
+  ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 999px; }
+
+  .nav-blur {
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    background: var(--nav-bg);
+    border-bottom: 1px solid var(--border-soft);
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.08);
+  }
+
   .nav-shell {
-    min-height: 86px;
-    gap: 28px;
+    max-width: 1400px;
+    margin: 0 auto;
+    min-height: 76px;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 24px;
+    padding: 0 18px;
   }
 
-  .top-nav-frame {
-    padding: 8px;
-  }
-
-  .top-nav-list {
+  .brand-mark {
+    display: inline-flex;
+    align-items: center;
     gap: 10px;
-  }
-
-  .nav-link {
-    height: 48px;
-    padding: 0 20px;
-    font-size: 20px;
-    font-weight: 600;
-  }
-
-  .brand-text {
-    font-size: 18px;
+    text-decoration: none;
+    min-width: 120px;
+    flex-shrink: 0;
   }
 
   .brand-logo-wrap {
-    width: 38px;
-    height: 38px;
+    width: 34px;
+    height: 34px;
+    border-radius: 999px;
+    padding: 2px;
+    background: linear-gradient(135deg, var(--accent), #244a76);
+    box-shadow: 0 0 0 1px var(--border-soft);
+    flex-shrink: 0;
   }
+
+  .brand-logo {
+    width: 100%;
+    height: 100%;
+    border-radius: 999px;
+    object-fit: contain;
+    background: var(--bg);
+    padding: 3px;
+  }
+
+  .brand-text {
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+    color: var(--text);
+    white-space: nowrap;
+  }
+
+  .top-nav-scroll {
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    display: flex;
+    justify-content: center;
+    min-width: 0;
+  }
+
+  .top-nav-scroll::-webkit-scrollbar { display: none; }
+
+  .top-nav-frame {
+    display: inline-flex;
+    align-items: center;
+    padding: 6px;
+    border-radius: 999px;
+    border: 1px solid var(--border-soft);
+    background: var(--surface-soft);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.03);
+  }
+
+  .top-nav-list {
+    min-width: max-content;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0 auto;
+    padding: 0;
+    list-style: none;
+  }
+
+  .nav-link {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    padding: 0 14px;
+    border-radius: 999px;
+    color: var(--dim);
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.22s ease;
+    white-space: nowrap;
+  }
+
+  .nav-link:hover {
+    color: var(--text);
+    background: var(--tag-soft-bg);
+  }
+
+  .nav-link.is-active {
+    color: var(--text);
+    background: var(--input-pill);
+    box-shadow: inset 0 0 0 1px var(--tag-border);
+  }
+
+  .nav-link.is-active::after {
+    content: "";
+    position: absolute;
+    left: 12px;
+    right: 12px;
+    bottom: 6px;
+    height: 2px;
+    border-radius: 999px;
+    background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  }
+
+  .theme-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    height: 40px;
+    padding: 0 14px;
+    border-radius: 999px;
+    border: 1px solid var(--border-soft);
+    background: var(--surface-soft);
+    color: var(--dim);
+    cursor: pointer;
+    transition: all .2s ease;
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  .theme-toggle:hover {
+    color: var(--text);
+    border-color: var(--tag-border);
+    background: var(--tag-soft-bg);
+  }
+
+  .page-wrap {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 100px 16px 48px;
+  }
+
+  .layout-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 2.2fr) minmax(0, 7.2fr) minmax(0, 2.6fr);
+    gap: 20px;
+    align-items: start;
+  }
+
+  .left-col, .right-col {
+    position: sticky;
+    top: 96px;
+  }
+
+  .article-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .card, .widget {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    transition: all .25s ease;
+  }
+
+  .card {
+    border-radius: 16px;
+  }
+
+  .widget {
+    border-radius: 16px;
+    padding: 20px;
+  }
+
+  .card:hover {
+    border-color: var(--border-strong);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 28px var(--shadow), 0 0 0 1px var(--card-hover-ring);
+  }
+
+  .widget-title {
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 14px;
+    font-family: JetBrains Mono, monospace;
+  }
+
+  .tag {
+    display: inline-flex;
+    align-items: center;
+    background: var(--tag-bg);
+    border: 1px solid var(--tag-border);
+    border-radius: 999px;
+    color: var(--accent-soft);
+    font-size: 12px;
+    padding: 5px 10px;
+    line-height: 1;
+    white-space: nowrap;
+  }
+
+  .tag-soft {
+    background: var(--tag-soft-bg);
+    border-color: var(--tag-border);
+    color: var(--dim);
+  }
+
+  .arrow-btn {
+    width: 34px;
+    height: 34px;
+    border: 1px solid var(--arrow-border);
+    border-radius: 999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--dim);
+    background: var(--arrow-bg);
+    font-size: 14px;
+    transition: all .2s ease;
+    flex-shrink: 0;
+  }
+
+  .card:hover .arrow-btn {
+    background: var(--tag-bg);
+    border-color: var(--accent);
+    color: var(--accent);
+    transform: translateX(2px);
+  }
+
+  .cat-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--divider);
+    font-size: 15px;
+    color: var(--dim);
+    cursor: pointer;
+    transition: color 0.2s ease;
+  }
+
+  .cat-item:last-child { border-bottom: none; }
+  .cat-item:hover { color: var(--text); }
+
+  .bar {
+    background: var(--bar-bg);
+    border-radius: 999px;
+    overflow: hidden;
+  }
+
+  .bar-fill {
+    background: linear-gradient(90deg, var(--accent-dim), var(--accent));
+    border-radius: 999px;
+    height: 100%;
+    transition: width 1s ease;
+  }
+
+  .avatar-ring {
+    background: conic-gradient(var(--accent) 0, #244a76 60%, var(--accent) 100%);
+    border-radius: 999px;
+    padding: 2px;
+  }
+
+  .avatar-inner {
+    background: var(--bg);
+    border-radius: 999px;
+    padding: 3px;
+  }
+
+  .line-clamp-1,
+  .line-clamp-2,
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .line-clamp-1 { -webkit-line-clamp: 1; }
+  .line-clamp-2 { -webkit-line-clamp: 2; }
+  .line-clamp-3 { -webkit-line-clamp: 3; }
+
+  .tabular-nums {
+    font-variant-numeric: tabular-nums;
+  }
+
+  @media (min-width: 768px) {
+    .article-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (min-width: 1200px) {
+    .nav-shell { min-height: 86px; gap: 28px; }
+    .top-nav-frame { padding: 8px; }
+    .top-nav-list { gap: 10px; }
+    .nav-link { height: 48px; padding: 0 20px; font-size: 20px; font-weight: 600; }
+    .brand-text { font-size: 18px; }
+    .brand-logo-wrap { width: 38px; height: 38px; }
+    .theme-toggle { height: 46px; padding: 0 16px; }
+  }
+
+  @media (max-width: 1279px) {
+    .layout-grid { grid-template-columns: minmax(0, 1fr); }
+    .left-col, .right-col { position: static; top: auto; }
+    .left-col { order: 1; }
+    main { order: 2; }
+    .right-col { order: 3; }
+  }
+
+  @media (max-width: 900px) {
+    .nav-shell {
+      grid-template-columns: 1fr;
+      gap: 10px;
+      padding: 10px 12px;
+      min-height: auto;
+    }
+    .brand-mark { justify-self: start; }
+    .top-nav-scroll { justify-content: flex-start; }
+    .top-nav-frame { padding: 4px; }
+    .top-nav-list { margin: 0; padding-bottom: 2px; }
+    .nav-link { height: 36px; padding: 0 12px; font-size: 14px; }
+    .theme-toggle { width: fit-content; }
+  }
+
+  @media (max-width: 767px) {
+    .page-wrap { padding: 108px 12px 36px; }
+    .widget { padding: 16px; border-radius: 14px; }
+    .card { border-radius: 14px; }
+    .tag { font-size: 12px; padding: 5px 9px; }
+    .arrow-btn { width: 32px; height: 32px; font-size: 13px; }
+    .cat-item { font-size: 14px; padding: 9px 0; }
+    .brand-text { font-size: 15px; }
+  }
+  body.light-theme .widget-title {
+    color: #6b7f96;
+  }
+
+  body.light-theme .tag {
+    color: #2e5f9b;
+  }
+
+  body.light-theme .tag-soft {
+    color: #4a6078;
+  }
+
+  body.light-theme .arrow-btn {
+    color: #4a6078;
+  }
+
+  body.light-theme .theme-toggle {
+    color: #3f536b;
+  }
+  body.light-theme .card h3,
+body.light-theme .card h2,
+body.light-theme .card .card-title {
+  color: #1b2a3a !important;
 }
 
-    @media (max-width: 1279px) {
-      .layout-grid {
-        grid-template-columns: minmax(0, 1fr);
-      }
-      .left-col, .right-col {
-        position: static;
-        top: auto;
-      }
-      .left-col { order: 1; }
-      main { order: 2; }
-      .right-col { order: 3; }
-    }
+body.light-theme .card p,
+body.light-theme .card .text-dim,
+body.light-theme .card .text-muted {
+  color: #52657d !important;
+}
 
-    @media (max-width: 900px) {
-      .nav-shell {
-        grid-template-columns: 1fr;
-        gap: 10px;
-        padding: 10px 12px;
-        min-height: auto;
-      }
-      .brand-mark {
-        justify-self: start;
-      }
-      .top-nav-scroll {
-        justify-content: flex-start;
-      }
-      .top-nav-frame {
-        padding: 4px;
-      }
-      .top-nav-list {
-        margin: 0;
-        padding-bottom: 2px;
-      }
-      .nav-link {
-        height: 36px;
-        padding: 0 12px;
-        font-size: 14px;
-      }
-    }
+body.light-theme .card .line-clamp-2,
+body.light-theme .card .line-clamp-3 {
+  color: #1b2a3a !important;
+}
 
-    @media (max-width: 767px) {
-      .page-wrap {
-        padding: 108px 12px 36px;
-      }
-      .widget {
-        padding: 16px;
-        border-radius: 14px;
-      }
-      .card {
-        padding: 14px !important;
-        border-radius: 14px;
-      }
-      .tag {
-        font-size: 12px;
-        padding: 5px 9px;
-      }
-      .arrow-btn {
-        width: 30px;
-        height: 30px;
-        font-size: 13px;
-      }
-      .cat-item {
-        font-size: 14px;
-        padding: 9px 0;
-      }
-      .brand-text {
-        font-size: 15px;
-      }
-    }
-  </style>
+body.light-theme .card .tabular-nums,
+body.light-theme .card time,
+body.light-theme .card .meta-text {
+  color: #6a7d94 !important;
+}
+body.light-theme .widget p,
+body.light-theme .widget li,
+body.light-theme .widget a,
+body.light-theme .widget span {
+  color: #52657d !important;
+}
+
+body.light-theme .widget .tabular-nums,
+body.light-theme .widget strong,
+body.light-theme .widget b {
+  color: #2b3d52 !important;
+}
+body.light-theme .widget .cat-item,
+body.light-theme .widget .hot-post-item {
+  color: #52657d !important;
+}
+</style>
 </head>
-<body class="min-h-screen text-text">
 
+<body class="min-h-screen text-text">
   <header class="nav-blur fixed top-0 left-0 right-0 z-50">
     <div class="nav-shell">
       <a href="#" class="brand-mark nav-filter">
         <span class="brand-logo-wrap">
-          <img src="./logo.jpg" alt="小帆船 Logo" class="brand-logo" onerror="this.onerror=null;this.src='./image.jpg';">
+          <img src="logo.jpg" alt="Logo" class="brand-logo" onerror="this.onerror=null;this.src='image.jpg';" />
         </span>
-        <span class="brand-text">小帆船-官方博客</span>
+        <span class="brand-text">小帆船·官方博客</span>
       </a>
 
-      <nav class="top-nav-scroll" aria-label="主导航">
+      <nav class="top-nav-scroll" aria-label="顶部分类">
         <div class="top-nav-frame">
           <ul class="top-nav-list">
             <li><a href="#" class="nav-link nav-filter is-active">首页</a></li>
-            <li><a href="#" class="nav-link nav-filter">机场&VPS</a></li>
-            <li><a href="#" class="nav-link nav-filter">手机&eSIM</a></li>
-            <li><a href="#" class="nav-link nav-filter">银行&券商&交易所</a></li>
-            <li><a href="#" class="nav-link nav-filter">港美股&加密货币</a></li>
+            <li><a href="#" class="nav-link nav-filter">机场/VPS</a></li>
+            <li><a href="#" class="nav-link nav-filter">手机/eSIM</a></li>
+            <li><a href="#" class="nav-link nav-filter">银行/券商/交易所</a></li>
+            <li><a href="#" class="nav-link nav-filter">港美股/加密货币</a></li>
             <li><a href="#" class="nav-link nav-filter">各类工具</a></li>
           </ul>
         </div>
       </nav>
 
-      <div class="hidden lg:block"></div>
+      <div class="flex items-center justify-end">
+  <button id="theme-toggle" class="theme-toggle" type="button" aria-label="切换主题">
+    <i class="fas fa-moon"></i>
+    <span id="theme-toggle-text">深色</span>
+  </button>
+</div>
     </div>
   </header>
 
   <div class="page-wrap">
     <div class="layout-grid">
-
       <aside class="left-col flex flex-col gap-4">
         <div class="widget">
           <div class="flex flex-col items-center text-center gap-3">
             <div class="avatar-ring" style="width:64px;height:64px;">
               <div class="avatar-inner w-full h-full flex items-center justify-center overflow-hidden">
-                <img src="./logo.jpg" alt="小帆船 Logo" class="w-[86%] h-[86%] object-contain rounded-full" onerror="this.onerror=null;this.src='./image.jpg';">
+                <img src="logo.jpg" alt="Logo" class="w-[86%] h-[86%] object-contain rounded-full" onerror="this.onerror=null;this.src='image.jpg';" />
               </div>
             </div>
             <div>
@@ -442,40 +570,71 @@
               <div class="text-dim mt-1 text-[13px] md:text-[14px]">数字出海全链路实操</div>
             </div>
             <div class="flex gap-2 flex-wrap justify-center mt-1">
-              <span class="tag">eSIM</span><span class="tag">VPN</span><span class="tag">券商</span><span class="tag">交易所</span><span class="tag">加密货币</span><span class="tag">银行</span><span class="tag">港美股</span><span class="tag">工具</span>
+              <span class="tag">eSIM</span>
+              <span class="tag">VPN</span>
+              <span class="tag">券商</span>
+              <span class="tag">交易所</span>
+              <span class="tag">加密货币</span>
+              <span class="tag">银行</span>
+              <span class="tag">港美股</span>
+              <span class="tag">工具</span>
             </div>
-            <p class="text-dim mt-1 text-[14px] md:text-[15px] leading-7 md:leading-8">让跨境金融与网络连接更简单</p>
+            <p class="text-dim mt-1 text-[14px] md:text-[15px] leading-7 md:leading-8">
+              让跨境金融与网络连接更简单
+            </p>
           </div>
         </div>
 
         <div class="widget">
           <div class="widget-title flex items-center gap-2">
-            <img src="./logo.jpg" alt="logo" class="w-4 h-4 rounded-full object-cover" onerror="this.style.display='none'">
+            <img src="logo.jpg" alt="logo" class="w-4 h-4 rounded-full object-cover" onerror="this.style.display='none'" />
             <span>分类</span>
           </div>
-          <div class="cat-item nav-filter group hover:pl-3 transition-all duration-300"><span class="group-hover:text-accent transition-colors">机场&VPS</span></div>
-          <div class="cat-item nav-filter group hover:pl-3 transition-all duration-300"><span class="group-hover:text-accent transition-colors">手机&eSIM</span></div>
-          <div class="cat-item nav-filter group hover:pl-3 transition-all duration-300"><span class="group-hover:text-accent transition-colors">银行&券商&交易所</span></div>
-          <div class="cat-item nav-filter group hover:pl-3 transition-all duration-300"><span class="group-hover:text-accent transition-colors">港美股&加密货币</span></div>
-          <div class="cat-item nav-filter group hover:pl-3 transition-all duration-300"><span class="group-hover:text-accent transition-colors">各类工具</span></div>
+          <div class="cat-item nav-filter group hover:pl-3 transition-all duration-300">
+            <span class="group-hover:text-accent transition-colors">机场/VPS</span>
+          </div>
+          <div class="cat-item nav-filter group hover:pl-3 transition-all duration-300">
+            <span class="group-hover:text-accent transition-colors">手机/eSIM</span>
+          </div>
+          <div class="cat-item nav-filter group hover:pl-3 transition-all duration-300">
+            <span class="group-hover:text-accent transition-colors">银行/券商/交易所</span>
+          </div>
+          <div class="cat-item nav-filter group hover:pl-3 transition-all duration-300">
+            <span class="group-hover:text-accent transition-colors">港美股/加密货币</span>
+          </div>
+          <div class="cat-item nav-filter group hover:pl-3 transition-all duration-300">
+            <span class="group-hover:text-accent transition-colors">各类工具</span>
+          </div>
         </div>
 
         <div class="widget">
           <div class="widget-title opacity-50 scale-90 origin-left flex items-center gap-2">
-            <img src="./logo.jpg" alt="logo" class="w-4 h-4 rounded-full object-cover opacity-90" onerror="this.style.display='none'">
+            <img src="logo.jpg" alt="logo" class="w-4 h-4 rounded-full object-cover opacity-90" onerror="this.style.display='none'" />
             <span>联系 & 社区</span>
           </div>
+
           <div class="flex flex-col">
             <a href="https://t.me/vipxiaofanchuan" target="_blank" rel="noopener noreferrer" class="cat-item group flex items-center justify-between !py-2.5 border-none">
-              <span class="flex items-center gap-2.5"><i class="fab fa-telegram text-[16px] text-sky-400"></i><span class="text-[14px] md:text-[15px] group-hover:text-white transition-colors">Telegram 交流群</span></span>
+              <span class="flex items-center gap-2.5">
+                <i class="fab fa-telegram text-[16px] text-sky-400"></i>
+                <span class="text-[14px] md:text-[15px] group-hover:text-white transition-colors">Telegram 交流群</span>
+              </span>
               <i class="fas fa-angle-right text-dim text-[12px] opacity-0 group-hover:opacity-100 transition-all"></i>
             </a>
+
             <a href="https://www.youtube.com/@CNXiaoFanChuan" target="_blank" rel="noopener noreferrer" class="cat-item group flex items-center justify-between !py-2.5 border-none">
-              <span class="flex items-center gap-2.5"><i class="fab fa-youtube text-[16px] text-red-500"></i><span class="text-[14px] md:text-[15px] group-hover:text-white transition-colors">YouTube 频道</span></span>
+              <span class="flex items-center gap-2.5">
+                <i class="fab fa-youtube text-[16px] text-red-500"></i>
+                <span class="text-[14px] md:text-[15px] group-hover:text-white transition-colors">YouTube 频道</span>
+              </span>
               <i class="fas fa-angle-right text-dim text-[12px] opacity-0 group-hover:opacity-100 transition-all"></i>
             </a>
+
             <a href="mailto:qiao4830@hotmail.com" class="cat-item group flex items-center justify-between !py-2.5 border-none">
-              <span class="flex items-center gap-2.5"><i class="fas fa-envelope text-[16px] text-yellow-500"></i><span class="text-[14px] md:text-[15px] group-hover:text-white transition-colors">商务合作</span></span>
+              <span class="flex items-center gap-2.5">
+                <i class="fas fa-envelope text-[16px] text-yellow-500"></i>
+                <span class="text-[14px] md:text-[15px] group-hover:text-white transition-colors">商务合作</span>
+              </span>
               <i class="fas fa-angle-right text-dim text-[15px] opacity-0 group-hover:opacity-100 transition-all"></i>
             </a>
           </div>
@@ -483,7 +642,7 @@
       </aside>
 
       <main class="flex flex-col gap-5 min-w-0">
-        <div class="article-grid grid grid-cols-1 md:grid-cols-2 gap-4"></div>
+        <div class="article-grid" id="article-grid"></div>
 
         <div id="load-more-container" class="flex justify-center mt-6 md:mt-10 mb-10 md:mb-20">
           <button id="load-more-btn" class="tag px-6 md:px-10 py-3 md:py-4 bg-surface border-border hover:border-accent hover:text-accent transition-all cursor-pointer text-[14px] md:text-[15px] font-bold">
@@ -495,7 +654,7 @@
       <aside class="right-col flex flex-col gap-4">
         <div class="widget">
           <div class="widget-title flex items-center gap-2">
-            <img src="./logo.jpg" alt="logo" class="w-4 h-4 rounded-full object-cover" onerror="this.style.display='none'">
+            <img src="logo.jpg" alt="logo" class="w-4 h-4 rounded-full object-cover" onerror="this.style.display='none'" />
             <span>热门文章</span>
           </div>
           <div id="hot-posts-container" class="flex flex-col gap-2"></div>
@@ -503,35 +662,60 @@
 
         <div class="widget">
           <div class="widget-title flex items-center gap-2">
-            <img src="./logo.jpg" alt="logo" class="w-4 h-4 rounded-full object-cover" onerror="this.style.display='none'">
+            <img src="logo.jpg" alt="logo" class="w-4 h-4 rounded-full object-cover" onerror="this.style.display='none'" />
             <span>本月流量来源</span>
           </div>
+
           <div class="flex flex-col gap-4">
-            <div><div class="flex justify-between mb-1.5"><span class="text-dim text-[14px] md:text-[15px]">搜索引擎</span><span class="text-accent text-[14px] md:text-[15px]">58%</span></div><div class="bar h-2"><div class="bar-fill" style="width:58%"></div></div></div>
-            <div><div class="flex justify-between mb-1.5"><span class="text-dim text-[14px] md:text-[15px]">YouTube</span><span class="text-accent text-[14px] md:text-[15px]">24%</span></div><div class="bar h-2"><div class="bar-fill" style="width:24%"></div></div></div>
-            <div><div class="flex justify-between mb-1.5"><span class="text-dim text-[14px] md:text-[15px]">直接访问</span><span class="text-accent text-[14px] md:text-[15px]">12%</span></div><div class="bar h-2"><div class="bar-fill" style="width:12%"></div></div></div>
+            <div>
+              <div class="flex justify-between mb-1.5">
+                <span class="text-dim text-[14px] md:text-[15px]">搜索引擎</span>
+                <span class="text-accent text-[14px] md:text-[15px]">58%</span>
+              </div>
+              <div class="bar h-2"><div class="bar-fill" style="width:58%"></div></div>
+            </div>
+
+            <div>
+              <div class="flex justify-between mb-1.5">
+                <span class="text-dim text-[14px] md:text-[15px]">YouTube</span>
+                <span class="text-accent text-[14px] md:text-[15px]">24%</span>
+              </div>
+              <div class="bar h-2"><div class="bar-fill" style="width:24%"></div></div>
+            </div>
+
+            <div>
+              <div class="flex justify-between mb-1.5">
+                <span class="text-dim text-[14px] md:text-[15px]">直接访问</span>
+                <span class="text-accent text-[14px] md:text-[15px]">12%</span>
+              </div>
+              <div class="bar h-2"><div class="bar-fill" style="width:12%"></div></div>
+            </div>
           </div>
         </div>
 
         <div class="widget">
           <div class="widget-title opacity-60 flex items-center gap-2">
-            <img src="./logo.jpg" alt="logo" class="w-4 h-4 rounded-full object-cover" onerror="this.style.display='none'">
+            <img src="logo.jpg" alt="logo" class="w-4 h-4 rounded-full object-cover" onerror="this.style.display='none'" />
             <span>极客工具箱</span>
           </div>
+
           <div class="grid grid-cols-2 gap-3 mt-4">
-            <a href="https://scamalytics.com/" target="_blank" rel="noopener noreferrer" class="flex flex-col items-center justify-center py-4 md:py-5 px-2 rounded-xl bg-slate-800/20 border border-slate-800 hover:border-sky-500/50 hover:bg-slate-800/40 transition-all group text-center">
+            <a href="https://scamalytics.com" target="_blank" rel="noopener noreferrer" class="flex flex-col items-center justify-center py-4 md:py-5 px-2 rounded-xl bg-slate-800/20 border border-slate-800 hover:border-sky-500/50 hover:bg-slate-800/40 transition-all group text-center">
               <i class="fas fa-shield-virus text-sky-400 text-xl md:text-2xl mb-2 md:mb-3"></i>
               <span class="text-[13px] md:text-[14px] text-slate-200 group-hover:text-white font-bold">IP 风险</span>
             </a>
-            <a href="https://whoer.net/" target="_blank" rel="noopener noreferrer" class="flex flex-col items-center justify-center py-4 md:py-5 px-2 rounded-xl bg-slate-800/20 border border-slate-800 hover:border-purple-500/50 hover:bg-slate-800/40 transition-all group text-center">
+
+            <a href="https://whoer.net" target="_blank" rel="noopener noreferrer" class="flex flex-col items-center justify-center py-4 md:py-5 px-2 rounded-xl bg-slate-800/20 border border-slate-800 hover:border-purple-500/50 hover:bg-slate-800/40 transition-all group text-center">
               <i class="fas fa-user-secret text-purple-400 text-xl md:text-2xl mb-2 md:mb-3"></i>
               <span class="text-[13px] md:text-[14px] text-slate-200 group-hover:text-white font-bold">匿名查询</span>
             </a>
-            <a href="https://www.xe.com/currencyconverter/" target="_blank" rel="noopener noreferrer" class="flex flex-col items-center justify-center py-4 md:py-5 px-2 rounded-xl bg-slate-800/20 border border-slate-800 hover:border-yellow-500/50 hover:bg-slate-800/40 transition-all group text-center">
+
+            <a href="https://www.xe.com/currencyconverter" target="_blank" rel="noopener noreferrer" class="flex flex-col items-center justify-center py-4 md:py-5 px-2 rounded-xl bg-slate-800/20 border border-slate-800 hover:border-yellow-500/50 hover:bg-slate-800/40 transition-all group text-center">
               <i class="fas fa-comments-dollar text-yellow-400 text-xl md:text-2xl mb-2 md:mb-3"></i>
               <span class="text-[13px] md:text-[14px] text-slate-200 group-hover:text-white font-bold">实时汇率</span>
             </a>
-            <a href="https://browserleaks.com/" target="_blank" rel="noopener noreferrer" class="flex flex-col items-center justify-center py-4 md:py-5 px-2 rounded-xl bg-slate-800/20 border border-slate-800 hover:border-emerald-500/50 hover:bg-slate-800/40 transition-all group text-center">
+
+            <a href="https://browserleaks.com" target="_blank" rel="noopener noreferrer" class="flex flex-col items-center justify-center py-4 md:py-5 px-2 rounded-xl bg-slate-800/20 border border-slate-800 hover:border-emerald-500/50 hover:bg-slate-800/40 transition-all group text-center">
               <i class="fas fa-fingerprint text-emerald-400 text-xl md:text-2xl mb-2 md:mb-3"></i>
               <span class="text-[13px] md:text-[14px] text-slate-200 group-hover:text-white font-bold">指纹检测</span>
             </a>
@@ -542,116 +726,226 @@
   </div>
 
   <script src="data.js"></script>
+<script>
+  let currentIndex = 8;
+  const increment = 8;
+  let currentFilteredPosts = [];
+    function applyTheme(theme) {
+    const body = document.body;
+    const btnText = document.getElementById('theme-toggle-text');
+    const btnIcon = document.querySelector('#theme-toggle i');
 
-  <script>
-    let currentIndex = 8;
-    const increment = 8;
-    let currentFilteredPosts = [];
-
-    function setActiveNav(category) {
-      document.querySelectorAll('.nav-link').forEach(link => {
-        const text = link.innerText.trim();
-        const active = category === '首页' ? text === '首页' : text === category;
-        link.classList.toggle('is-active', active);
-      });
+    if (theme === 'light') {
+      body.classList.add('light-theme');
+      if (btnText) btnText.textContent = '浅色';
+      if (btnIcon) btnIcon.className = 'fas fa-sun';
+    } else {
+      body.classList.remove('light-theme');
+      if (btnText) btnText.textContent = '深色';
+      if (btnIcon) btnIcon.className = 'fas fa-moon';
     }
 
-    function renderArticles(isAppend = false) {
-      const container = document.querySelector('.article-grid');
-      const loadMoreBtn = document.getElementById('load-more-container');
-      if (!container) return;
+    localStorage.setItem('site-theme', theme);
+  }
 
-      if (!isAppend) {
-        container.innerHTML = "";
-        currentIndex = 8;
-      }
+  function initTheme() {
+    const savedTheme = localStorage.getItem('site-theme') || 'dark';
+    applyTheme(savedTheme);
 
-      const itemsToShow = currentFilteredPosts.slice(isAppend ? currentIndex - increment : 0, currentIndex);
+    document.getElementById('theme-toggle')?.addEventListener('click', () => {
+      const isLight = document.body.classList.contains('light-theme');
+      applyTheme(isLight ? 'dark' : 'light');
+    });
+  }
+  function formatCategoryLabel(cat) {
+    const text = (cat || '').trim();
 
-      const html = itemsToShow.map(post => {
-        let previewText = (post.description && post.description.includes('<div')) 
-          ? '数字出海全链路实操方案实测，包含网络环境优化及跨境金融工具使用。' 
-          : (post.description || '暂无简介');
+    const map = {
+      '机场&VPS': '机场/VPS',
+      '机场/VPS': '机场/VPS',
+      'VPS': '机场/VPS',
 
-        return `
-        <article class="card p-4 md:p-4 flex flex-col gap-3 min-w-0">
-          <div class="flex items-center gap-2 flex-wrap">
-            <span class="tag">${post.category}</span>
-            <span class="text-dim uppercase text-[11px] md:text-[12px] font-mono">${post.date}</span>
+      '手机&eSIM': '手机/eSIM',
+      '手机/eSIM': '手机/eSIM',
+      'eSIM': '手机/eSIM',
+
+      '银行&券商&交易所': '银行/券商/交易所',
+      '银行/券商/交易所': '银行/券商/交易所',
+
+      '港美股&加密货币': '港美股/加密货币',
+      '港美股/加密货币': '港美股/加密货币',
+
+      '工具': '各类工具',
+      '各类工具': '各类工具'
+    };
+
+    return map[text] || text || '未分类';
+  }
+
+  function normalizeCategory(cat) {
+    return (cat || '').replace(/\s+/g, '').trim();
+  }
+
+  function categoryAliases(text) {
+    const map = {
+      '首页': '',
+      '机场/VPS': ['机场/VPS', '机场&VPS', 'VPS'],
+      '手机/eSIM': ['手机/eSIM', '手机&eSIM', 'eSIM'],
+      '银行/券商/交易所': ['银行/券商/交易所', '银行&券商&交易所'],
+      '港美股/加密货币': ['港美股/加密货币', '港美股&加密货币'],
+      '各类工具': ['各类工具', '工具']
+    };
+    return map[text] || [text];
+  }
+
+  function setActiveNav(categoryText) {
+    document.querySelectorAll('.nav-link').forEach(link => {
+      const text = link.innerText.trim();
+      const active = categoryText ? text === categoryText : text === '首页';
+      link.classList.toggle('is-active', active);
+    });
+  }
+
+  function getPreviewText(post) {
+    if (post.summary && String(post.summary).trim()) return String(post.summary).trim();
+    if (!post.description) return '';
+
+    const temp = document.createElement('div');
+    temp.innerHTML = post.description;
+    const text = (temp.textContent || temp.innerText || '').replace(/\s+/g, ' ').trim();
+    return text.slice(0, 80);
+  }
+
+  function getTags(post) {
+    if (!Array.isArray(post.tags)) return [];
+    return post.tags.filter(Boolean).slice(0, 3);
+  }
+
+  function renderArticles(isAppend = false) {
+    const container = document.getElementById('article-grid');
+    const loadMoreWrap = document.getElementById('load-more-container');
+    if (!container) return;
+
+    if (!isAppend) {
+      container.innerHTML = '';
+      currentIndex = 8;
+    }
+
+    const start = isAppend ? currentIndex - increment : 0;
+    const itemsToShow = currentFilteredPosts.slice(start, currentIndex);
+
+    const html = itemsToShow.map(post => {
+      const tags = getTags(post).slice(0, 3);
+
+      return `
+        <article
+          class="card p-4 md:p-4 flex flex-col h-full min-w-0 cursor-pointer"
+          onclick="window.open('details.html?id=${post.youtubeId}', '_blank')"
+        >
+          <div class="flex items-center gap-2 flex-wrap mb-3">
+            <span class="tag">${formatCategoryLabel(post.category)}</span>
+            <span class="text-dim text-[11px] md:text-[12px] font-mono tabular-nums tracking-[0.02em]">${post.date || ''}</span>
           </div>
-          <div class="flex-1 min-w-0">
-            <h3 class="font-display font-semibold text-text mb-2 text-[16px] md:text-[18px] leading-snug break-words">${post.title}</h3>
-            <p class="text-dim text-[14px] md:text-[15px] line-clamp-2 leading-6">${previewText}</p>
+
+          <div class="mb-4 min-w-0">
+            <h3 class="font-semibold text-text text-[18px] md:text-[20px] leading-[1.4] line-clamp-2 break-words min-h-[2.8em]">
+              ${post.title || ''}
+            </h3>
           </div>
-          <div class="iframe-wrap mb-2">
-            <iframe src="https://www.youtube.com/embed/${post.youtubeId}" loading="lazy" allowfullscreen></iframe>
-          </div>
-          <div class="flex items-center justify-between gap-3">
-            <div class="flex gap-1.5 flex-wrap min-w-0">
-              ${post.tags ? post.tags.map(tag => `<span class="tag" style="background:rgba(108,182,255,0.05);">${tag}</span>`).join('') : ''}
+
+          <div class="block relative overflow-hidden rounded-xl aspect-video bg-black/20 border border-[#223247] mb-3">
+            <img
+              src="https://img.youtube.com/vi/${post.youtubeId}/mqdefault.jpg"
+              alt="${(post.title || '').replace(/"/g, '&quot;')}"
+              class="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+              loading="lazy"
+            />
+            <div class="absolute inset-0 flex items-center justify-center bg-black/10 hover:bg-black/30 transition-colors">
+              <div class="w-11 h-11 flex items-center justify-center rounded-full bg-red-600/90 text-white shadow-lg">
+                <svg fill="currentColor" viewBox="0 0 24 24" class="w-5 h-5 ml-[2px]">
+                  <path d="M8 5v14l11-7z"></path>
+                </svg>
+              </div>
             </div>
-            <!-- 添加了 target="_blank" -->
-            <a href="details.html?id=${post.youtubeId}" target="_blank" class="arrow-btn" title="查看视频说明">
-              <i class="fas fa-arrow-right"></i>
-            </a>
           </div>
-        </article>`;
-      }).join('');
 
-      container.insertAdjacentHTML('beforeend', html);
+          <div class="mt-auto flex items-end justify-between gap-3">
+            <div class="flex gap-1.5 flex-wrap min-w-0">
+              ${tags.map(tag => `<span class="tag tag-soft">${tag}</span>`).join('')}
+            </div>
+            <div class="arrow-btn">
+              <i class="fas fa-arrow-right"></i>
+            </div>
+          </div>
+        </article>
+      `;
+    }).join('');
 
-      if (loadMoreBtn) {
-        loadMoreBtn.style.display = (currentIndex >= currentFilteredPosts.length) ? 'none' : 'flex';
-      }
+    container.insertAdjacentHTML('beforeend', html);
+
+    if (loadMoreWrap) {
+      loadMoreWrap.style.display = currentIndex >= currentFilteredPosts.length ? 'none' : 'flex';
+    }
+  }
+
+  function renderHotPosts() {
+    const hotContainer = document.getElementById('hot-posts-container');
+    if (!hotContainer || typeof posts === 'undefined') return;
+
+    hotContainer.innerHTML = posts.slice(0, 4).map((post, i) => `
+      <div
+        class="flex gap-3 items-start group cursor-pointer py-1"
+        onclick="window.open('details.html?id=${post.youtubeId}', '_blank')"
+      >
+        <span class="font-mono text-accent/80 group-hover:text-accent shrink-0 text-[15px] md:text-[17px] font-semibold leading-none mt-[1px] tabular-nums">
+          ${String(i + 1).padStart(2, '0')}
+        </span>
+        <span class="text-dim group-hover:text-text text-[13px] md:text-[14px] leading-[1.45] line-clamp-2">
+          ${post.title || ''}
+        </span>
+      </div>
+    `).join('');
+  }
+
+  function applyFilter(categoryText) {
+    const aliases = categoryAliases(categoryText).map(normalizeCategory);
+
+    if (!categoryText || categoryText === '首页') {
+      currentFilteredPosts = [...posts];
+    } else {
+      currentFilteredPosts = posts.filter(p => aliases.includes(normalizeCategory(p.category)));
     }
 
-    function renderHotPosts() {
-      const hotContainer = document.getElementById('hot-posts-container');
-      if (!hotContainer || typeof posts === 'undefined') return;
+    renderArticles(false);
+    setActiveNav(categoryText || '首页');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
 
-      hotContainer.innerHTML = posts.slice(0, 4).map((post, i) => `
-        <div class="flex gap-3 items-start group cursor-pointer py-1" onclick="window.open('details.html?id=${post.youtubeId}', '_blank')">
-          <span class="font-display text-accentDim group-hover:text-accent shrink-0 text-[15px] md:text-[18px] leading-none mt-[2px]">0${i + 1}</span>
-          <span class="text-dim group-hover:text-text text-[13px] md:text-[14px] leading-[1.45] line-clamp-2">${post.title}</span>
-        </div>
-      `).join('');
-    }
+  document.addEventListener('DOMContentLoaded', () => {
+  initTheme();
 
-    document.addEventListener('DOMContentLoaded', () => {
-      if (typeof posts !== 'undefined' && Array.isArray(posts)) {
-        currentFilteredPosts = [...posts];
-        renderArticles();
-        renderHotPosts();
-        setActiveNav('首页');
-      } else {
-        console.error('data.js 加载失败或格式错误');
-      }
+  if (typeof posts !== 'undefined' && Array.isArray(posts)) {
+    currentFilteredPosts = [...posts];
+    renderArticles(false);
+    renderHotPosts();
+    setActiveNav('首页');
+  } else {
+    console.error('data.js 未正确加载');
+  }
 
-      document.getElementById('load-more-btn')?.addEventListener('click', () => {
-        currentIndex += increment;
-        renderArticles(true);
-      });
+    document.getElementById('load-more-btn')?.addEventListener('click', () => {
+      currentIndex += increment;
+      renderArticles(true);
+    });
 
-      document.querySelectorAll('.nav-filter').forEach(link => {
-        link.addEventListener('click', (e) => {
-          e.preventDefault();
-
-          let cat = link.tagName === 'A'
-            ? link.innerText.trim()
-            : (link.querySelector('span')?.innerText.trim() || '');
-
-          let filterCat = (cat === '港美股/加密货币') ? '港美股&加密货币' : cat;
-
-          currentFilteredPosts = (filterCat === '首页' || filterCat === '小帆船' || !filterCat)
-            ? [...posts]
-            : posts.filter(p => p.category === filterCat);
-
-          renderArticles(false);
-          setActiveNav(filterCat === '小帆船' ? '首页' : filterCat || '首页');
-          window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
+    document.querySelectorAll('.nav-filter').forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+        const text = link.innerText.trim();
+        applyFilter(text);
       });
     });
-  </script>
+  });
+</script>
 </body>
 </html>
