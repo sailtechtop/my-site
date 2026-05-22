@@ -1,4 +1,101 @@
 const posts = [
+  // 64. 圣何塞精品线路 VPS 深度实测：三网双程优化，机房直连更进一步（2026）
+{
+  title: "圣何塞精品线路 VPS 深度实测：三网双程优化，机房直连更进一步（2026）",
+  date: "2026-05-22",
+  category: "机场/VPS",
+  youtubeId: "uIpvSmJMrKo",
+  tags: ["圣何塞VPS", "三网优化", "CN2 GIA", "9929", "CMIN2", "xTom"],
+  summary: "这一期围绕一台圣何塞精品线路 VPS 做深度实测，重点看三网双程优化、机房直连精品线路、硬件性能、IP质量、回程去程路由、国内测速，以及购买开通时需要注意的细节。",
+  description: `
+    <div class="space-y-6 text-dim leading-relaxed">
+      <section>
+        <h3 class="text-accent font-bold text-lg mb-2">这台圣何塞 VPS 特别在哪里？</h3>
+        <p>优化线路的美西 VPS 其实并不少见，但这台机器真正拉开差距的地方，在于它做到了机房层级的三网双程优化。电信走 CN2 GIA，联通走 9929，移动走 CMIN2，而且不是普通意义上的“接了优化线路”那么简单，而是精品线路直接连到圣何塞机房本身。</p>
+        <p>这意味着去程从上海由精品线路直达圣何塞机房，回程则从圣何塞机房直接接入精品线路回北京，中间少了一层额外中转。路径更短、绕路更少，所以延迟和整体传输效率都比普通三网优化产品更有优势。</p>
+      </section>
+
+      <section class="bg-white/5 p-4 rounded-xl border border-white/10">
+        <h3 class="text-accentSoft font-bold mb-3">硬件配置表现怎么样？</h3>
+        <ul class="list-disc pl-5 mt-2 space-y-1">
+          <li><b>CPU：</b>AMD EPYC 7C13，2G 主频，属于正常能打的轻量小鸡水平。</li>
+          <li><b>单核成绩：</b>Sysbench 单线程 3235 分，Geekbench 5 单核 949 分。</li>
+          <li><b>内存：</b>读取 39.7GB/s，写入 24GB/s，延迟 178ns，表现相当亮眼。</li>
+          <li><b>硬盘：</b>4K 随机读 27.7MB/s、写 54MB/s，顺序读写接近 2GB/s，更高负载下甚至能冲到 4GB/s 以上。</li>
+        </ul>
+      </section>
+
+      <section>
+        <h3 class="text-accentSoft font-bold mb-2">适合拿来做什么？</h3>
+        <p>从测试结果来看，这台 VPS 虽然不是性能怪兽，但整体资源给得比较扎实，尤其内存吞吐很漂亮。无论是搭建个人博客、挂轻量服务、跑小型中转，还是做日常落地使用，这样的配置都已经足够顺手。</p>
+      </section>
+
+      <section class="bg-white/5 p-4 rounded-xl border border-white/10">
+        <h3 class="text-accentSoft font-bold mb-2">IP 质量和解锁能力如何？</h3>
+        <p>这枚 IP 挂在 AS6233，隶属于 xTom，注册地在德国，但实际广播到美国使用。数据库普遍把它识别为机房 IP，不过 439 个数据库里黑名单为 0，整体不算脏，只有个别风险库给出的评分略高一些。</p>
+        <p>更关键的是实际可用性并不差。TikTok、Netflix、YouTube、Amazon 和 ChatGPT 都可以按美国原生方式解锁，只有 Disney+ 和 Reddit 处于屏蔽状态。再加上商家承诺 6 月底前会为所有用户免费更换美国原生 IP，所以当前是“先能用，后补齐短板”的状态。</p>
+      </section>
+
+      <section>
+        <h3 class="text-accentSoft font-bold mb-2">三网回国延迟表现如何？</h3>
+        <p>电信这边表现最稳，华东部分地区最低已经到了 128ms，北京也能控制在 150ms 以内。对于圣何塞方向的 VPS 来说，这个成绩已经非常漂亮。</p>
+        <p>联通整体比电信略高一点，但大多数地区依然落在 140 到 160 多毫秒这个区间；移动同样不差，上海大约 140ms，北京大约 165ms。整体观感很明确：三网都能打，而且没有明显短板。</p>
+      </section>
+
+      <section class="border-t border-border pt-4">
+        <h3 class="text-success font-bold mb-2">这台机器的线路优势在哪里？</h3>
+        <div class="font-mono text-sm space-y-2">
+          <p>1. <b>电信回程：</b>北京、上海、广州都进入 AS4809，也就是 CN2 GIA。</p>
+          <p>2. <b>联通回程：</b>上海和广州走 AS9929，北京走 AS10099，都是高质量国际承载。</p>
+          <p>3. <b>移动回程：</b>北上广全部走 AS58807，也就是满血版 CMIN2。</p>
+          <p>4. <b>核心亮点：</b>从 xTom 机房直接接入三大运营商各自的精品线路，线路优化比普通双程产品又往前走了一步。</p>
+        </div>
+
+        <div class="mt-4 font-mono text-sm bg-accentDim/20 p-3 rounded">
+          <p class="text-accent">去程表现：</p>
+          <p>01. 电信：标准精品网去程</p>
+          <p>02. 联通：国际段明显优化</p>
+          <p>03. 移动：直接走满血 CMIN2</p>
+          <p>04. 精品线路直连机房，路径更干净</p>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="text-accentSoft font-bold mb-2">本地实测速度怎么样？</h3>
+        <p>在实际测速部分，Speedtest 下载达到 718Mbps，上传接近 200Mbps；Fast 下载约 420Mbps，上传约 190Mbps。以移动千兆宽带来测，这个成绩基本已经把可用带宽跑出来了。</p>
+        <p>更直观的是晚高峰 YouTube 测速，速度稳定在 18 万 K 左右，表现非常亮眼。再结合它给到的 1G 共享带宽，这条线路的优势确实不是纸面参数，而是能在实测里真正体现出来。</p>
+      </section>
+
+      <section class="bg-white/5 p-4 rounded-xl border border-white/10">
+        <h3 class="text-accentSoft font-bold mb-2">价格和购买逻辑怎么看？</h3>
+        <p>这次重点测试的是圣何塞精品线路里的中杯方案，价格为 439 元/年，折算下来每月约 36.5 元。相比之前一些更便宜的产品，现在的价格确实略高一些，但要结合近期内存涨价、库存吃紧和整体补货提价的市场背景一起看。</p>
+        <p>如果只看产品本身，这个价格的支撑点主要有三个：第一，精品线路直连机房；第二，1G 共享带宽明显高于很多同类产品常见的 200 到 300 兆；第三，当前广播 IP 后续还会免费换成美国原生 IP，补齐后整体完成度会更高。</p>
+      </section>
+
+      <section>
+        <h3 class="text-accentSoft font-bold mb-2">购买和开通时要注意什么？</h3>
+        <p>购买流程整体不复杂，打开产品页后选择夏季清凉促销里的圣何塞精品线路，确认服务条款后下单即可。新用户需要先注册账号、验证邮箱，然后可以选择加密货币或支付宝付款，整个流程对中文用户还算友好。</p>
+        <p>开通之后，进入管理页先装系统。系统更推荐 Debian 12 或 Ubuntu 20.04，考虑到这台机器只有 1G 内存，swap 建议设置成 1G；高级选项里建议把 VNC 打开，其他保持默认即可。</p>
+      </section>
+
+      <section class="bg-white/5 p-4 rounded-xl border border-white/10">
+        <h3 class="text-accentSoft font-bold mb-2">新手怎么快速上手？</h3>
+        <p>如果你是刚接触 VPS 的用户，视频里也给了一条比较省心的路线：用 FinalShell 连接服务器，再配合 fscarman 的 sing-box 全家桶脚本去搭建，整体部署会非常快。后续把订阅链接导入客户端就能直接使用。</p>
+        <p>另外还有两个小建议也比较实用：记得关闭 IPv6，并开启 BBR 加速。这样在日常使用时，整体体验通常会更顺滑一些。</p>
+      </section>
+
+      <section class="border-t border-border pt-4">
+        <h3 class="text-success font-bold mb-2">这期内容的核心结论</h3>
+        <div class="font-mono text-sm space-y-2">
+          <p>1. <b>线路很强：</b>三网双程优化已经不错，而这台机器更进一步做到了精品线路直连机房。</p>
+          <p>2. <b>硬件不拉胯：</b>CPU 属于正常发挥，内存和整体吞吐表现反而是加分项。</p>
+          <p>3. <b>可用性不错：</b>广播 IP 不算完美，但主流 AI 和流媒体已经足够日常使用，后续还会升级原生 IP。</p>
+          <p>4. <b>适合动手快的人：</b>如果需求正好匹配，这类高性价比产品通常卖得很快，犹豫太久容易没货。</p>
+        </div>
+      </section>
+    </div>
+  `
+},
   // 63. 港股科技打新热起来了：复星证券开户、入金与功能实测（2026）
   {
     title: "港股科技打新热起来了：复星证券开户、入金与功能实测（2026）",
