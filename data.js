@@ -1,6 +1,260 @@
 const posts = [
+// 67. 0.6 美元美国实体号码实测：Saily 注册、激活与接码教程（2026）
+{
+  title: "0.6美元美国实体号码实测：Saily 注册、激活与接码教程",
+  date: "2026-06-17",
+  category: "手机/eSIM",
+  youtubeId: "_rhWrsQMJgQ",
+  tags: ["Saily", "美国实体号码", "美国手机号", "eSIM", "接码", "美区应用", "保号"],
+  summary: "这期视频完整实测 Nord 旗下 Saily 新推出的美国号码 eSIM。内容包括注册登录、优惠码下单、身份验证、eSIM 安装、国行 iPhone 搭配 xeSIM 激活，以及 Telegram、WhatsApp、Google 账号的实际接码表现。",
+  description: `
+    <div class="space-y-6 text-dim leading-relaxed">
+      <section>
+        <h3 class="text-accent font-bold text-lg mb-2">为什么这张 eSIM 最近很值得关注？</h3>
+        <p>如果你想要一个能长期保号、可以在中国大陆漫游接码、还能顺手注册美区应用的美国号码，那 Saily 这次推出的新产品确实很有吸引力。最低使用优惠码后只要 0.6 美元，就能先把一个美国实体电话号码拿下来。</p>
+        <p>更关键的是，它不只是“能接短信”这么简单，而是还支持后续按需添加通话、短信和数据套餐。对于想低成本先占一个美国号码、后面再慢慢扩展用途的人来说，这种玩法会非常灵活。</p>
+      </section>
 
+      <section class="bg-white/5 p-4 rounded-xl border border-white/10">
+        <h3 class="text-accentSoft font-bold mb-3">这款产品最吸引人的几个点</h3>
+        <ul class="list-disc pl-5 mt-2 space-y-1">
+          <li><b>价格非常低：</b>使用优惠码后首单最低只要 0.6 美元。</li>
+          <li><b>支持中国大陆漫游：</b>适合接码、养号和注册美区应用。</li>
+          <li><b>套餐很灵活：</b>后续可以按自己需求添加通话、短信和数据组合。</li>
+          <li><b>支付方式友好：</b>支持 Apple Pay、Google Pay、银行卡和 PayPal。</li>
+        </ul>
+      </section>
 
+      <section>
+        <h3 class="text-accentSoft font-bold mb-2">为什么会测试这款产品？</h3>
+        <p>在 Tello 把积分清零之后，这期内容也可以看作是一次替代方案的实测。视频里提到，最近为了找新的可用号码产品，前前后后测试了不少方案，也踩了不少坑，所以这次分享的重点不是单纯介绍新品，而是从实用角度判断它到底值不值得上车。</p>
+        <p>而今天这张卡来自 Nord 旗下的 Saily。Saily 之前主要做的是流量 eSIM，这个月则进行了升级，正式推出了带美国号码的 eSIM，也因此更适合接码、注册和长期保号这类需求。</p>
+      </section>
+
+      <section class="bg-white/5 p-4 rounded-xl border border-white/10">
+        <h3 class="text-accentSoft font-bold mb-2">开始之前要先注意什么？</h3>
+        <p>下载安装本身不复杂，苹果国区 App Store 就能直接搜到 Saily；但真正关键的，不是下载，而是环境。视频里特别强调，打开 App 前一定要先准备好干净的美国原生 IP，并且开启全局代理。</p>
+        <p>如果节点质量不够，后面的登录、下单甚至号码环境判断，都可能受到影响。所以这条教程的前提，不只是会不会操作，而是你有没有先把访问环境处理好。</p>
+      </section>
+
+      <section>
+        <h3 class="text-accentSoft font-bold mb-2">注册和购买流程怎么走？</h3>
+        <p>打开 Saily 后，可以直接用 Google 账号或者 Apple 账号一键注册登录。进入后点击“探索电话号码”，就能看到这款美国号码 eSIM 的说明：号码月费 0.99 美元，可以在世界各地拨打电话、发送短信并接听来电，也就意味着它支持全球漫游。</p>
+        <p>继续点击获取号码后，可以先选目的地和通信套餐，也可以像视频里一样先跳过。到结账页面后，不建议去改税务国家和地区，直接输入优惠码即可。</p>
+      </section>
+
+      <section class="border-t border-border pt-4">
+        <h3 class="text-success font-bold mb-2">下单时最关键的几个细节</h3>
+        <div class="font-mono text-sm space-y-2">
+          <p>1. <b>优惠码：</b>输入专属优惠码 <b>YUANTE1236</b> 后，最低价格可压到 0.6 美元。</p>
+          <p>2. <b>费用感受：</b>不到 4 块人民币，几乎就是一杯可乐的钱。</p>
+          <p>3. <b>付款方式：</b>Apple Pay 是最方便的，Google Pay、银行卡、PayPal 也都支持。</p>
+          <p>4. <b>支付体验：</b>对跨境用户来说，这种支付兼容性确实很友好。</p>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="text-accentSoft font-bold mb-2">为什么还要做身份验证？</h3>
+        <p>虽然美国号码本身并不是强制实名的产品，但这次 Saily 在开通前仍然要求做身份验证。视频里的理解是，这更像是 Nord 这类大型跨国公司为了合规管理，同时避免号码资源被滥用而设置的门槛。</p>
+        <p>操作流程也不算复杂：证件签发国选 China，证件类型可以用护照，拍摄护照正面后再进行自拍比对，完成后就能继续进入安装流程。</p>
+      </section>
+
+      <section class="bg-white/5 p-4 rounded-xl border border-white/10">
+        <h3 class="text-accentSoft font-bold mb-2">国行 iPhone 怎么安装这张 eSIM？</h3>
+        <p>如果你的手机支持原生 eSIM，那么直接在当前设备上安装就可以了。但视频里演示的是国行 iPhone 17 搭配 xeSIM 的组合，这种情况下不能走原生安装，而必须选择“在别人的设备上安装”。</p>
+        <p>之后系统会显示一个激活二维码。安卓搭配 xeSIM 的用户可以直接扫码，而 iPhone 方案会稍微复杂一点，需要先截图，再借助支付宝把二维码转成以 LPA 开头的字符串。</p>
+      </section>
+
+      <section>
+        <h3 class="text-accentSoft font-bold mb-2">xeSIM 下载和激活的关键步骤</h3>
+        <p>把二维码转换成 LPA 字符串之后，需要先关闭 Wi-Fi，把 xeSIM 切换到流量卡，并确认蜂窝数据已经走流量卡网络。之后进入蜂窝网络里的 SIM 卡应用程序，打开 xeSIM，选择 download eSIM，把刚才复制的字符串粘贴进去发送即可。</p>
+        <p>这一步不需要额外确认码，等待大约一分钟左右，看到 download successfully，就说明 eSIM 已经下载完成。之后再去 eSIM list 里启用它，手机就能识别出新的美国号码。</p>
+      </section>
+
+      <section class="border-t border-border pt-4">
+        <h3 class="text-success font-bold mb-2">安装完成后能做什么？</h3>
+        <div class="font-mono text-sm space-y-2">
+          <p>1. <b>号码已生效：</b>回到蜂窝网络，就能看到新的美国号码。</p>
+          <p>2. <b>默认可漫游：</b>视频里显示默认接入的是中国电信网络。</p>
+          <p>3. <b>可随时加套餐：</b>后续可以按需添加数据或通信套餐。</p>
+          <p>4. <b>继续享受优惠：</b>如果用专属优惠码注册，后续购买数据或通信套餐还能再减 5 美元。</p>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="text-accentSoft font-bold mb-2">这个号码的接码表现怎么样？</h3>
+        <p>视频先在数据库里查了一下，结果显示这条线路类型是 cell phone，也就是实体手机号码，而不是 VoIP 虚拟号。对于接码场景来说，这一点非常关键，因为很多平台对实体号码和虚拟号码的权重判断并不一样。</p>
+        <p>之后实测了 Telegram、WhatsApp 以及 Google 账号绑定，整体表现都比较顺。Telegram 短信验证码是秒到，Google 绑定短信同样到得很快，WhatsApp 则是通过语音验证码的方式顺利完成注册。</p>
+      </section>
+
+      <section class="bg-white/5 p-4 rounded-xl border border-white/10">
+        <h3 class="text-accentSoft font-bold mb-3">实测接码结果怎么理解？</h3>
+        <ul class="list-disc pl-5 mt-2 space-y-1">
+          <li><b>Telegram：</b>短信验证码秒到，注册过程很顺。</li>
+          <li><b>WhatsApp：</b>走语音验证码路线，也能正常通过。</li>
+          <li><b>Google：</b>绑定美国号码时，短信同样到得很快。</li>
+          <li><b>整体判断：</b>作为接码养号型美国号码，这次表现是合格的。</li>
+        </ul>
+      </section>
+
+      <section>
+        <h3 class="text-accentSoft font-bold mb-2">有哪些内容这期暂时没有展开？</h3>
+        <p>因为视频主要先聚焦在号码注册、激活和接码部分，所以并没有继续展开测试数据套餐、IP 质量、网络速度以及通话质量。原因也很直接：手头已有不少美国号码和 VPS，这次就没有再额外开通信和数据套餐去做完整对比。</p>
+        <p>换句话说，这期更像是一条“开号 + 激活 + 接码实测”视频，而不是把所有通信能力都一次性测到底。</p>
+      </section>
+
+      <section class="border-t border-border pt-4">
+        <h3 class="text-success font-bold mb-2">这款产品的核心优缺点</h3>
+        <div class="font-mono text-sm space-y-2">
+          <p>1. <b>最大优点：</b>保号成本很低，不开 Wi-Fi Calling 也能全球漫游接码。</p>
+          <p>2. <b>第二优点：</b>套餐组合灵活，后续可按需叠加数据、短信和通话。</p>
+          <p>3. <b>第三优点：</b>支付方式非常方便，Apple Pay 和 Google Pay 都很好用。</p>
+          <p>4. <b>可能争议：</b>需要做身份认证，这一点对部分用户可能会比较敏感。</p>
+        </div>
+
+        <div class="mt-4 font-mono text-sm bg-accentDim/20 p-3 rounded">
+          <p class="text-accent">视频里的总体判断：</p>
+          <p>01. 目前属于保号成本极低的美国实体号码方案</p>
+          <p>02. 适合注册美区应用、接收验证码和轻量养号</p>
+          <p>03. 胜在灵活性高，而不是靠超低流量价格取胜</p>
+          <p>04. 如果你不是做灰产，个人正常使用问题不大</p>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="text-accentSoft font-bold mb-2">这期内容的核心结论</h3>
+        <p>如果你想要的是一个低成本、支付方便、支持中国大陆漫游接码的美国实体号码，那么 Saily 这次的新产品确实值得重点关注。尤其是 0.6 美元就能先把号码拿下来，这个试错成本已经非常低了。</p>
+        <p>它不一定是所有场景下最便宜的数据方案，但如果你更看重号码本身、接码体验和后续扩展能力，那这类“先开号、再按需加套餐”的产品思路，确实比很多固定套餐更灵活。</p>
+      </section>
+    </div>
+  `
+},
+// 66. 美区跨境电商与社媒养号 VPS 实测：9929 + CMIN2 + NTT 双 ISP 家宽 IP（2026）
+{
+  title: "美区跨境电商与社媒养号VPS实测：9929+CMIN2｜NTT双ISP（2026）",
+  date: "2026-06-17",
+  category: "机场/VPS",
+  youtubeId: "oJpoT1-1M9Q",
+  tags: ["美区VPS", "跨境电商", "社媒养号", "9929", "CMIN2", "NTT", "静态住宅IP"],
+  summary: "这期视频围绕一台面向美区跨境电商和社媒养号场景的 VPS 展开实测。重点不是硬件跑分，而是它是否同时具备大陆优化线路、稳定低风险的美国静态住宅 IP，以及足够实用的出口带宽。",
+  description: `
+    <div class="space-y-6 text-dim leading-relaxed">
+      <section>
+        <h3 class="text-accent font-bold text-lg mb-2">为什么这台 VPS 会特别适合美区跨境业务？</h3>
+        <p>做美区跨境电商和社媒养号，最怕的往往不是不会运营，而是环境不过关。真正决定体验的核心，通常就看三样：线路强不强、IP 稳不稳、带宽够不够。</p>
+        <p>而这台 VPS 最有价值的地方，就在于它把这三点放在了一台机器里：电信联通双走 9929，移动走 CMIN2；IP 是 NTT 双 ISP 的静态住宅属性；起步带宽就是 50 兆。对需要做美区业务的人来说，这几个指标几乎就是最值钱的部分。</p>
+      </section>
+
+      <section class="bg-white/5 p-4 rounded-xl border border-white/10">
+        <h3 class="text-accentSoft font-bold mb-3">为什么很多人会觉得它有性价比？</h3>
+        <ul class="list-disc pl-5 mt-2 space-y-1">
+          <li><b>线路省心：</b>大陆回程已经做了优化，不需要自己再额外拼接复杂链路。</li>
+          <li><b>IP 属性更完整：</b>不是普通机房 IP，而是更适合跨境场景的静态住宅属性。</li>
+          <li><b>带宽更充裕：</b>起步就是 50 兆，比很多外挂静态住宅 IP 的出口速度更宽松。</li>
+          <li><b>价格更友好：</b>最低配年付折算后每月约 5.44 加元，也就是不到 4 美元。</li>
+        </ul>
+      </section>
+
+      <section>
+        <h3 class="text-accentSoft font-bold mb-2">它和常见的“两件套方案”有什么区别？</h3>
+        <p>现在很多做美区跨境业务的用户，常见思路是先买一台大陆优化线路 VPS，再额外买一个美国静态住宅 IP，然后通过链式代理把两者串起来。这套方案当然成熟，也能用，但本质上是两套系统、两套成本，而且对用户自己也有一定技术门槛。</p>
+        <p>更关键的是，这种组合方案里最容易形成瓶颈的，往往正是静态住宅 IP 的出口带宽。很多商家给到的静态住宅 IP，常见只有 20 到 30 兆，日常勉强够用，但如果你想推流、跑后台、留出冗余空间，成本通常就会上去。</p>
+      </section>
+
+      <section class="bg-white/5 p-4 rounded-xl border border-white/10">
+        <h3 class="text-accentSoft font-bold mb-2">为什么说它是一台“合并方案”的机器？</h3>
+        <p>这台 VPS 的思路很直接：它自己就已经带了大陆优化线路，同时又配上了 NTT 双 ISP 静态住宅属性 IP，而且起步带宽就是 50 兆。也就是说，原本要靠“两件套”才能拼出来的结果，它一台机器就完成了。</p>
+        <p>所以它的重点不是把某一个参数拉到极致，而是把跨境业务最在意的三件事——线路、IP 和带宽——一次性做齐。</p>
+      </section>
+
+      <section>
+        <h3 class="text-accentSoft font-bold mb-2">先看硬件：这台机器性能怎么样？</h3>
+        <p>如果只看硬件，这台机器其实并不属于跑分型产品。CPU 给的是 Intel Xeon E5-2680，Sysbench 单线程 373 分，Geekbench 5 单核 416 分，放在 2026 年来看只能算比较一般。</p>
+        <p>内存检测约 962MB，读取大概 14.5GB/s，写入 8.8GB/s，延迟 326ns，表现中规中矩；硬盘是 20G，顺序性能还能接受，但随机性能比较一般。拿来装系统、跑轻量环境没问题，但不适合重度写盘。</p>
+      </section>
+
+      <section class="bg-white/5 p-4 rounded-xl border border-white/10">
+        <h3 class="text-accentSoft font-bold mb-3">硬件部分怎么理解更准确？</h3>
+        <ul class="list-disc pl-5 mt-2 space-y-1">
+          <li><b>不是性能怪兽：</b>跑分不高，不适合把它当高性能服务器看。</li>
+          <li><b>资源还算扎实：</b>没有开启气球回收和 KSM 复用，这一点算是加分项。</li>
+          <li><b>适合轻量用途：</b>装系统、跑节点、做轻量环境都够用。</li>
+          <li><b>核心价值不在硬件：</b>真正值钱的部分在后面的 IP、线路和带宽。</li>
+        </ul>
+      </section>
+
+      <section>
+        <h3 class="text-accentSoft font-bold mb-2">这台机器的 IP 质量怎么样？</h3>
+        <p>这台机器最关键的亮点之一，就是 IP 质量。它的 IP 挂在 AS2914，归属 NTT America，注册地和使用地都在美国，类型也明确识别成了原生 IP。</p>
+        <p>从属性识别来看，5 个主流数据库里，除了 IP2Location 之外，其他几个基本都把它识别成了家宽 IP。风险评分整体也比较漂亮，大多都在低风险区间，只有 Scamalytics 给了 15 分，但这个数值本身也依然属于低风险。</p>
+      </section>
+
+      <section class="bg-white/5 p-4 rounded-xl border border-white/10">
+        <h3 class="text-accentSoft font-bold mb-2">为什么这个 IP 会特别有吸引力？</h3>
+        <p>除了数据库识别比较好看之外，它在 ipinfo 里的表现也很关键：Privacy 和 Anycast 都是 false，说明这个 IP 更偏静态、归属更固定；同时 AS Type 显示的是 ISP，而不是普通机房托管类型。</p>
+        <p>把这些信息合在一起看，这就是一枚归属清晰、风险较低、家宽属性明显的美国原生静态 IP。对于跨境电商、社媒养号和部分高 IP 要求应用来说，这种属性会明显更有吸引力。</p>
+      </section>
+
+      <section>
+        <h3 class="text-accentSoft font-bold mb-2">网络线路表现如何？</h3>
+        <p>网络这一块，这台机器接入的是 NTT 的 AS2914 全球骨干网，属于 Tier-1 级别的顶级运营商网络。大包延迟表现也比较漂亮，京津冀一带电信和移动基本压在 160ms 左右，联通在 200ms 出头；到了江浙沪，电信和移动甚至进一步下探到了 150ms 到 160ms 这个区间。</p>
+        <p>对于一台美国线路机器来说，这种大面积压在 170ms 以内的表现已经相当不错了，而且图表完整度比较高，没有明显大面积异常跳点，说明至少在这轮测试里，波动控制做得也还可以。</p>
+      </section>
+
+      <section class="border-t border-border pt-4">
+        <h3 class="text-success font-bold mb-2">三网回程的核心结论</h3>
+        <div class="font-mono text-sm space-y-2">
+          <p>1. <b>电信：</b>回程走联通精品线路 9929，整体表现很亮眼。</p>
+          <p>2. <b>联通：</b>同样走 9929，但这次实测并没有明显拉开优势。</p>
+          <p>3. <b>移动：</b>走自己的高端线路 CMIN2，整体表现非常不错。</p>
+          <p>4. <b>测速结果：</b>国内多地上传下载大多落在 65 到 74 兆之间，和测试机 70 兆带宽基本吻合。</p>
+        </div>
+
+        <div class="mt-4 font-mono text-sm bg-accentDim/20 p-3 rounded">
+          <p class="text-accent">路由拆解重点：</p>
+          <p>01. 电信、联通方向先走 AS10099，再接入 AS9929 回国</p>
+          <p>02. 移动方向走 AS58807 回上海，再进 AS9808 骨干网</p>
+          <p>03. 三网路径都比较清晰，没有太多绕路</p>
+          <p>04. 整体定位属于“两网优化 + 一网高端”的完成度方案</p>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="text-accentSoft font-bold mb-2">实际使用层面表现怎么样？</h3>
+        <p>在实际检测里，Ping0 给出的结果相当亮眼：双 ISP 家庭宽带，风控值 4%，属于非常纯净的区间。而且在平台建议上，TikTok、跨境电商、社媒运营和 AI 应用全部都给到了五星推荐，这种评价在同类机器里并不常见。</p>
+        <p>解锁方面，Reddit、Claude、Netflix、Max、Disney+、Hulu 都可以正常通过；速度方面，Speedtest 下载 54 兆、上传 59 兆，Fast 下载 59 兆、上传 11 兆。晚高峰 21:20 测 YouTube，8K 视频也能稳定在 6 万 K 左右。</p>
+      </section>
+
+      <section class="bg-white/5 p-4 rounded-xl border border-white/10">
+        <h3 class="text-accentSoft font-bold mb-2">这台 VPS 更适合哪些人？</h3>
+        <p>如果你追求的是暴力跑分，这台机器显然不是最合适的选择。但如果你的核心需求是美区跨境电商、社媒养号，或者其他对出口 IP 质量、线路稳定性、带宽冗余比较敏感的场景，那它的定位就会非常清楚。</p>
+        <p>它不是一台拿来拼硬件参数的机器，而是一台围绕“环境质量”来设计的工作机。这也是它和很多普通 VPS 最大的区别。</p>
+      </section>
+
+      <section>
+        <h3 class="text-accentSoft font-bold mb-2">购买时有哪些配置值得关注？</h3>
+        <p>目前产品页可选的是 NTT 和 GTT 两类双 ISP VPS，每个分类下面都有四个配置。最低配年付 65 加元，折算下来每月约 5.4 加元，也就是不到 4 美元；如果想稍微舒服一点，可以直接考虑 8.99 加元的中配，也就是视频里这台测试机的同款。</p>
+        <p>中配带宽是 70 兆，流量给到 1000G，年付优惠后折算每月大约 6.92 加元，不到 5 美元。放在线路、IP 和带宽这个组合维度里看，性价比确实不错。</p>
+      </section>
+
+      <section class="border-t border-border pt-4">
+        <h3 class="text-success font-bold mb-2">开通和部署时的注意事项</h3>
+        <div class="font-mono text-sm space-y-2">
+          <p>1. <b>购买流程：</b>注册账号、验证邮箱、选择配置后可直接用支付宝付款。</p>
+          <p>2. <b>连接方式：</b>开通后可在后台查看 IP、端口和密码，再用 FinalShell 连接。</p>
+          <p>3. <b>搭建建议：</b>视频里推荐直接用 fscarmen 的 sing-box 全家桶脚本快速部署。</p>
+          <p>4. <b>优化细节：</b>部署完成后记得开启 BBR，再导入客户端使用，整体体验会更顺滑。</p>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="text-accentSoft font-bold mb-2">这期内容的核心判断</h3>
+        <p>暴力输出不是这台 VPS 的强项，它真正有价值的地方，在于 9929 + CMIN2 的双网优化、NTT 双 ISP 家宽属性的 IP，以及明显强于外挂静态住宅 IP 的带宽表现。再叠加一个相对合理的价格，它的产品定位其实非常清楚。</p>
+        <p>如果你刚好需要的是一台服务于美区跨境电商、社媒养号，或者其他高 IP 要求场景的工作机，那么这类产品确实值得重点关注。毕竟市场上能同时把线路、IP 和带宽做到这个完成度的机器，本来就不算多。</p>
+      </section>
+    </div>
+  `
+},
 // 65. Tello 积分清零事件：我攒了 835 美金，最后却被平台直接赖账（2026）
 {
   title: "Tello 积分清零事件：我攒了 835 美金，最后却被平台直接赖账（2026）",
