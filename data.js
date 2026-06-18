@@ -6,7 +6,7 @@ const posts = [
   category: "手机/eSIM",
   youtubeId: "_rhWrsQMJgQ",
   tags: ["Saily", "美国实体号码", "美国手机号", "eSIM", "接码", "美区应用", "保号"],
-  summary: "这期视频完整实测 Nord 旗下 Saily 新推出的美国号码 eSIM。内容包括注册登录、优惠码下单、身份验证、eSIM 安装、国行 iPhone 搭配 xeSIM 激活，以及 Telegram、WhatsApp、Google 账号的实际接码表现。",
+  summary: "完整实测 Nord 旗下 Saily 新推出的美国号码 eSIM。内容包括注册登录、优惠码下单、身份验证、eSIM 安装、国行 iPhone 搭配 xeSIM 激活，以及 Telegram、WhatsApp、Google 账号的实际接码表现。",
   description: `
     <div class="space-y-6 text-dim leading-relaxed">
       <section>
@@ -27,20 +27,20 @@ const posts = [
 
       <section>
         <h3 class="text-accentSoft font-bold mb-2">为什么会测试这款产品？</h3>
-        <p>在 Tello 把积分清零之后，这期内容也可以看作是一次替代方案的实测。视频里提到，最近为了找新的可用号码产品，前前后后测试了不少方案，也踩了不少坑，所以这次分享的重点不是单纯介绍新品，而是从实用角度判断它到底值不值得上车。</p>
+        <p>在 Tello 把积分清零之后，这期内容也可以看作是一次替代方案的实测。最近为了找新的可用号码产品，前前后后测试了不少方案，也踩了不少坑，所以这次分享的重点不是单纯介绍新品，而是从实用角度判断它到底值不值得上车。</p>
         <p>而今天这张卡来自 Nord 旗下的 Saily。Saily 之前主要做的是流量 eSIM，这个月则进行了升级，正式推出了带美国号码的 eSIM，也因此更适合接码、注册和长期保号这类需求。</p>
       </section>
 
       <section class="bg-white/5 p-4 rounded-xl border border-white/10">
         <h3 class="text-accentSoft font-bold mb-2">开始之前要先注意什么？</h3>
-        <p>下载安装本身不复杂，苹果国区 App Store 就能直接搜到 Saily；但真正关键的，不是下载，而是环境。视频里特别强调，打开 App 前一定要先准备好干净的美国原生 IP，并且开启全局代理。</p>
+        <p>下载安装本身不复杂，苹果国区 App Store 就能直接搜到 Saily；但真正关键的，不是下载，而是环境。打开 App 前一定要先准备好干净的美国原生 IP，并且开启全局代理。</p>
         <p>如果节点质量不够，后面的登录、下单甚至号码环境判断，都可能受到影响。所以这条教程的前提，不只是会不会操作，而是你有没有先把访问环境处理好。</p>
       </section>
 
       <section>
         <h3 class="text-accentSoft font-bold mb-2">注册和购买流程怎么走？</h3>
         <p>打开 Saily 后，可以直接用 Google 账号或者 Apple 账号一键注册登录。进入后点击“探索电话号码”，就能看到这款美国号码 eSIM 的说明：号码月费 0.99 美元，可以在世界各地拨打电话、发送短信并接听来电，也就意味着它支持全球漫游。</p>
-        <p>继续点击获取号码后，可以先选目的地和通信套餐，也可以像视频里一样先跳过。到结账页面后，不建议去改税务国家和地区，直接输入优惠码即可。</p>
+        <p>继续点击获取号码后，可以先选目的地和通信套餐，也可以先跳过。到结账页面后，不建议去改税务国家和地区，直接输入优惠码即可。</p>
       </section>
 
       <section class="border-t border-border pt-4">
@@ -55,13 +55,13 @@ const posts = [
 
       <section>
         <h3 class="text-accentSoft font-bold mb-2">为什么还要做身份验证？</h3>
-        <p>虽然美国号码本身并不是强制实名的产品，但这次 Saily 在开通前仍然要求做身份验证。视频里的理解是，这更像是 Nord 这类大型跨国公司为了合规管理，同时避免号码资源被滥用而设置的门槛。</p>
+        <p>虽然美国号码本身并不是强制实名的产品，但这次 Saily 在开通前仍然要求做身份验证。这更像是 Nord 这类大型跨国公司为了合规管理，同时避免号码资源被滥用而设置的门槛。</p>
         <p>操作流程也不算复杂：证件签发国选 China，证件类型可以用护照，拍摄护照正面后再进行自拍比对，完成后就能继续进入安装流程。</p>
       </section>
 
       <section class="bg-white/5 p-4 rounded-xl border border-white/10">
         <h3 class="text-accentSoft font-bold mb-2">国行 iPhone 怎么安装这张 eSIM？</h3>
-        <p>如果你的手机支持原生 eSIM，那么直接在当前设备上安装就可以了。但视频里演示的是国行 iPhone 17 搭配 xeSIM 的组合，这种情况下不能走原生安装，而必须选择“在别人的设备上安装”。</p>
+        <p>如果你的手机支持原生 eSIM，那么直接在当前设备上安装就可以了。但是国行 iPhone 17 搭配 xeSIM 的组合，这种情况下不能走原生安装，而必须选择“在别人的设备上安装”。</p>
         <p>之后系统会显示一个激活二维码。安卓搭配 xeSIM 的用户可以直接扫码，而 iPhone 方案会稍微复杂一点，需要先截图，再借助支付宝把二维码转成以 LPA 开头的字符串。</p>
       </section>
 
@@ -75,7 +75,7 @@ const posts = [
         <h3 class="text-success font-bold mb-2">安装完成后能做什么？</h3>
         <div class="font-mono text-sm space-y-2">
           <p>1. <b>号码已生效：</b>回到蜂窝网络，就能看到新的美国号码。</p>
-          <p>2. <b>默认可漫游：</b>视频里显示默认接入的是中国电信网络。</p>
+          <p>2. <b>默认可漫游：</b>默认接入的是中国电信网络。</p>
           <p>3. <b>可随时加套餐：</b>后续可以按需添加数据或通信套餐。</p>
           <p>4. <b>继续享受优惠：</b>如果用专属优惠码注册，后续购买数据或通信套餐还能再减 5 美元。</p>
         </div>
@@ -83,7 +83,7 @@ const posts = [
 
       <section>
         <h3 class="text-accentSoft font-bold mb-2">这个号码的接码表现怎么样？</h3>
-        <p>视频先在数据库里查了一下，结果显示这条线路类型是 cell phone，也就是实体手机号码，而不是 VoIP 虚拟号。对于接码场景来说，这一点非常关键，因为很多平台对实体号码和虚拟号码的权重判断并不一样。</p>
+        <p>先在数据库里查了一下，结果显示这条线路类型是 cell phone，也就是实体手机号码，而不是 VoIP 虚拟号。对于接码场景来说，这一点非常关键，因为很多平台对实体号码和虚拟号码的权重判断并不一样。</p>
         <p>之后实测了 Telegram、WhatsApp 以及 Google 账号绑定，整体表现都比较顺。Telegram 短信验证码是秒到，Google 绑定短信同样到得很快，WhatsApp 则是通过语音验证码的方式顺利完成注册。</p>
       </section>
 
@@ -99,8 +99,8 @@ const posts = [
 
       <section>
         <h3 class="text-accentSoft font-bold mb-2">有哪些内容这期暂时没有展开？</h3>
-        <p>因为视频主要先聚焦在号码注册、激活和接码部分，所以并没有继续展开测试数据套餐、IP 质量、网络速度以及通话质量。原因也很直接：手头已有不少美国号码和 VPS，这次就没有再额外开通信和数据套餐去做完整对比。</p>
-        <p>换句话说，这期更像是一条“开号 + 激活 + 接码实测”视频，而不是把所有通信能力都一次性测到底。</p>
+        <p>因为主要先聚焦在号码注册、激活和接码部分，所以并没有继续展开测试数据套餐、IP 质量、网络速度以及通话质量。原因也很直接：手头已有不少美国号码和 VPS，这次就没有再额外开通信和数据套餐去做完整对比。</p>
+        <p>换句话说，这期更像是一条“开号 + 激活 + 接码“实测，而不是把所有通信能力都一次性测到底。</p>
       </section>
 
       <section class="border-t border-border pt-4">
@@ -113,7 +113,7 @@ const posts = [
         </div>
 
         <div class="mt-4 font-mono text-sm bg-accentDim/20 p-3 rounded">
-          <p class="text-accent">视频里的总体判断：</p>
+          <p class="text-accent">总体判断：</p>
           <p>01. 目前属于保号成本极低的美国实体号码方案</p>
           <p>02. 适合注册美区应用、接收验证码和轻量养号</p>
           <p>03. 胜在灵活性高，而不是靠超低流量价格取胜</p>
@@ -136,7 +136,7 @@ const posts = [
   category: "机场/VPS",
   youtubeId: "oJpoT1-1M9Q",
   tags: ["美区VPS", "跨境电商", "社媒养号", "9929", "CMIN2", "NTT", "静态住宅IP"],
-  summary: "这期视频围绕一台面向美区跨境电商和社媒养号场景的 VPS 展开实测。重点不是硬件跑分，而是它是否同时具备大陆优化线路、稳定低风险的美国静态住宅 IP，以及足够实用的出口带宽。",
+  summary: "围绕一台面向美区跨境电商和社媒养号场景的 VPS 展开实测。重点不是硬件跑分，而是它是否同时具备大陆优化线路、稳定低风险的美国静态住宅 IP，以及足够实用的出口带宽。",
   description: `
     <div class="space-y-6 text-dim leading-relaxed">
       <section>
@@ -222,7 +222,7 @@ const posts = [
       <section>
         <h3 class="text-accentSoft font-bold mb-2">实际使用层面表现怎么样？</h3>
         <p>在实际检测里，Ping0 给出的结果相当亮眼：双 ISP 家庭宽带，风控值 4%，属于非常纯净的区间。而且在平台建议上，TikTok、跨境电商、社媒运营和 AI 应用全部都给到了五星推荐，这种评价在同类机器里并不常见。</p>
-        <p>解锁方面，Reddit、Claude、Netflix、Max、Disney+、Hulu 都可以正常通过；速度方面，Speedtest 下载 54 兆、上传 59 兆，Fast 下载 59 兆、上传 11 兆。晚高峰 21:20 测 YouTube，8K 视频也能稳定在 6 万 K 左右。</p>
+        <p>解锁方面，Reddit、Claude、Netflix、Max、Disney+、Hulu 都可以正常通过；速度方面，Speedtest 下载 54 兆、上传 59 兆，Fast 下载 59 兆、上传 11 兆。晚高峰 21:20 测 YouTube，8K 也能稳定在 6 万 K 左右。</p>
       </section>
 
       <section class="bg-white/5 p-4 rounded-xl border border-white/10">
@@ -233,7 +233,7 @@ const posts = [
 
       <section>
         <h3 class="text-accentSoft font-bold mb-2">购买时有哪些配置值得关注？</h3>
-        <p>目前产品页可选的是 NTT 和 GTT 两类双 ISP VPS，每个分类下面都有四个配置。最低配年付 65 加元，折算下来每月约 5.4 加元，也就是不到 4 美元；如果想稍微舒服一点，可以直接考虑 8.99 加元的中配，也就是视频里这台测试机的同款。</p>
+        <p>目前产品页可选的是 NTT 和 GTT 两类双 ISP VPS，每个分类下面都有四个配置。最低配年付 65 加元，折算下来每月约 5.4 加元，也就是不到 4 美元；如果想稍微舒服一点，可以直接考虑 8.99 加元的中配，也就是这台测试机的同款。</p>
         <p>中配带宽是 70 兆，流量给到 1000G，年付优惠后折算每月大约 6.92 加元，不到 5 美元。放在线路、IP 和带宽这个组合维度里看，性价比确实不错。</p>
       </section>
 
@@ -242,7 +242,7 @@ const posts = [
         <div class="font-mono text-sm space-y-2">
           <p>1. <b>购买流程：</b>注册账号、验证邮箱、选择配置后可直接用支付宝付款。</p>
           <p>2. <b>连接方式：</b>开通后可在后台查看 IP、端口和密码，再用 FinalShell 连接。</p>
-          <p>3. <b>搭建建议：</b>视频里推荐直接用 fscarmen 的 sing-box 全家桶脚本快速部署。</p>
+          <p>3. <b>搭建建议：</b>推荐直接用 fscarmen 的 sing-box 全家桶脚本快速部署。</p>
           <p>4. <b>优化细节：</b>部署完成后记得开启 BBR，再导入客户端使用，整体体验会更顺滑。</p>
         </div>
       </section>
@@ -262,13 +262,13 @@ const posts = [
   category: "手机/eSIM",
   youtubeId: "CFTzUJyDqI8",
   tags: ["Tello", "美国电话卡", "美卡", "维权经历", "海外运营商", "避坑"],
-  summary: "这期视频完整记录了我在 Tello 遇到的一次积分清零事件：9 个月积攒的 835 Tello Dollars，在兑换手机时连续砍单，随后又被平台以风控为由永久清零。内容也会聊到 Tello 近期的激活风险、养号成本变化，以及我为什么决定正式弃用它。",
+  summary: "完整记录了我在 Tello 遇到的一次积分清零事件：9 个月积攒的 835 Tello Dollars，在兑换手机时连续砍单，随后又被平台以风控为由永久清零。内容也会聊到 Tello 近期的激活风险、养号成本变化，以及我为什么决定正式弃用它。",
   description: `
     <div class="space-y-6 text-dim leading-relaxed">
       <section>
         <h3 class="text-accent font-bold text-lg mb-2">这次事件是怎么开始的？</h3>
         <p>835 美金，换算成人民币接近 6000 块。这是我用了 9 个月时间，在 Tello 账户里积攒下来的积分。本来我以为，这会是一次给粉丝交代、也是给自己兑现平台福利的正常兑换，结果没想到，它最后却变成了我维权的开始。</p>
-        <p>事情的起点，要追溯到去年 8 月。当时我在 YouTube 发布了一期美国电话卡解析视频，Tello 也是其中重点介绍的一家虚拟运营商。因为它使用 T-Mobile 网络、支持中国大陆漫游、还能开启 Wi‑Fi Calling，所以我当时分享了它的购买流程、激活方法和使用体验，也把官方邀请链接放在了视频下方。</p>
+        <p>事情的起点，要追溯到去年 8 月。当时我在 YouTube 发布了一期美国电话卡解析，Tello 也是其中重点介绍的一家虚拟运营商。因为它使用 T-Mobile 网络、支持中国大陆漫游、还能开启 Wi‑Fi Calling，所以我当时分享了它的购买流程、激活方法和使用体验，也把官方邀请链接放在了下方。</p>
       </section>
 
       <section class="bg-white/5 p-4 rounded-xl border border-white/10">
@@ -312,7 +312,7 @@ const posts = [
       <section>
         <h3 class="text-accentSoft font-bold mb-2">Tello 后来给了什么解释？</h3>
         <p>在我继续发邮件质问之后，Tello 官方终于回了一封态度极其傲慢的邮件。邮件里声称，系统判定我存在所谓的“自推”或者“欺诈交易”，所以他们把我账户里的 845 美金余额，直接扣到只剩 10 美金。</p>
-        <p>但真实情况很简单：我只是在 YouTube 的一期视频里介绍了 Tello，并挂上了官方邀请链接。账户里的这些积分，全都来自看过视频后自行下单的观众，整个过程公开透明，也完全符合它官方制定的推荐规则。</p>
+        <p>但真实情况很简单：我只是在 YouTube 的里介绍了 Tello，并挂上了官方邀请链接。账户里的这些积分，全都来自看过自行下单的观众，整个过程公开透明，也完全符合它官方制定的推荐规则。</p>
       </section>
 
       <section class="bg-white/5 p-4 rounded-xl border border-white/10">
@@ -350,7 +350,7 @@ const posts = [
       </section>
 
       <section class="bg-white/5 p-4 rounded-xl border border-white/10">
-        <h3 class="text-accentSoft font-bold mb-2">这期视频最想提醒大家什么？</h3>
+        <h3 class="text-accentSoft font-bold mb-2">这期最想提醒大家什么？</h3>
         <p>如果你正在使用 Tello，或者准备因为教程和推荐去尝试它，我觉得现在最重要的不是只看套餐价格和功能表，而是先看清这个平台在风控、奖励兑现和售后处理上的真实表现。</p>
         <p>便宜当然重要，但商业信誉更重要。一个平台如果能在没有清晰举证、没有有效申诉、没有正式解释的前提下，直接把用户 835 美金的资产归零，那它的问题就已经不再是“值不值得推荐”，而是“还能不能继续信任”。</p>
       </section>
@@ -364,7 +364,7 @@ const posts = [
   category: "机场/VPS",
   youtubeId: "uIpvSmJMrKo",
   tags: ["圣何塞VPS", "三网优化", "CN2 GIA", "9929", "CMIN2", "xTom"],
-  summary: "这一期围绕一台圣何塞精品线路 VPS 做深度实测，重点看三网双程优化、机房直连精品线路、硬件性能、IP质量、回程去程路由、国内测速，以及购买开通时需要注意的细节。",
+  summary: "围绕一台圣何塞精品线路 VPS 做深度实测，重点看三网双程优化、机房直连精品线路、硬件性能、IP质量、回程去程路由、国内测速，以及购买开通时需要注意的细节。",
   description: `
     <div class="space-y-6 text-dim leading-relaxed">
       <section>
@@ -438,7 +438,7 @@ const posts = [
 
       <section class="bg-white/5 p-4 rounded-xl border border-white/10">
         <h3 class="text-accentSoft font-bold mb-2">新手怎么快速上手？</h3>
-        <p>如果你是刚接触 VPS 的用户，视频里也给了一条比较省心的路线：用 FinalShell 连接服务器，再配合 fscarman 的 sing-box 全家桶脚本去搭建，整体部署会非常快。后续把订阅链接导入客户端就能直接使用。</p>
+        <p>如果你是刚接触 VPS 的用户，也给了一条比较省心的路线：用 FinalShell 连接服务器，再配合 fscarman 的 sing-box 全家桶脚本去搭建，整体部署会非常快。后续把订阅链接导入客户端就能直接使用。</p>
         <p>另外还有两个小建议也比较实用：记得关闭 IPv6，并开启 BBR 加速。这样在日常使用时，整体体验通常会更顺滑一些。</p>
       </section>
 
@@ -461,7 +461,7 @@ const posts = [
     category: "银行/券商/交易所",
     youtubeId: "sAiwRIi77Z0",
     tags: ["港股打新", "香港券商", "复星证券", "港股IPO", "美债", "加密货币"],
-    summary: "这一期围绕港股科技股 IPO 热潮，聊清楚为什么港股打新重新受到关注，以及现阶段什么样的香港券商更值得用。内容包含复星证券的开户门槛、牌照、费用、入金流程和几个重点功能体验。",
+    summary: "围绕港股科技股 IPO 热潮，聊清楚为什么港股打新重新受到关注，以及现阶段什么样的香港券商更值得用。内容包含复星证券的开户门槛、牌照、费用、入金流程和几个重点功能体验。",
     description: `
       <div class="space-y-6 text-dim leading-relaxed">
         <section>
@@ -481,7 +481,7 @@ const posts = [
 
         <section>
           <h3 class="text-accentSoft font-bold mb-2">什么样的香港券商才算真正好用？</h3>
-          <p>如果你想参与港股打新，前提是先有一个顺手、稳定、能开下来的港股券商。视频里把标准拆成四个维度：开户门槛、合规牌照、费用成本和功能拓展。尤其在富途、老虎、长桥等平台对大陆用户限制越来越多之后，真正还能让大陆用户在家通过网络完成开户的香港券商，选择已经没有那么多了。</p>
+          <p>如果你想参与港股打新，前提是先有一个顺手、稳定、能开下来的港股券商。把标准拆成四个维度：开户门槛、合规牌照、费用成本和功能拓展。尤其在富途、老虎、长桥等平台对大陆用户限制越来越多之后，真正还能让大陆用户在家通过网络完成开户的香港券商，选择已经没有那么多了。</p>
         </section>
 
         <section class="bg-white/5 p-4 rounded-xl border border-white/10">
@@ -492,7 +492,7 @@ const posts = [
 
         <section>
           <h3 class="text-accentSoft font-bold mb-2">开户前要先注意什么？</h3>
-          <p>正式开户之前，视频里特别提醒了一点：建议关闭代理，直接使用大陆网络操作。如果使用美国或其他地区的代理节点，开户流程大概率会失败。开户链接打开后，可以按页面提示进入三分钟极速开户，但在开户类型这一步，一定要选择 <b>CA 见证开户</b>。</p>
+          <p>正式开户之前，特别提醒了一点：建议关闭代理，直接使用大陆网络操作。如果使用美国或其他地区的代理节点，开户流程大概率会失败。开户链接打开后，可以按页面提示进入三分钟极速开户，但在开户类型这一步，一定要选择 <b>CA 见证开户</b>。</p>
         </section>
 
         <section class="bg-white/5 p-4 rounded-xl border border-white/10">
@@ -507,7 +507,7 @@ const posts = [
 
         <section>
           <h3 class="text-accentSoft font-bold mb-2">开户流程里有哪些关键设置？</h3>
-          <p>在完成证件上传、个人信息确认和银行卡验证之后，就会进入 KYC 环节。视频里建议职业状况选择受雇，财务情况和投资经验据实填写；衍生品买卖功能建议先勾选，因为这个功能可以暂时不用，但最好不要一开始就缺失。到了账户类型这一步，更推荐开 <b>保证金账户</b>，因为对于港股打新来说，保证金融资功能往往很关键。</p>
+          <p>在完成证件上传、个人信息确认和银行卡验证之后，就会进入 KYC 环节。建议职业状况选择受雇，财务情况和投资经验据实填写；衍生品买卖功能建议先勾选，因为这个功能可以暂时不用，但最好不要一开始就缺失。到了账户类型这一步，更推荐开 <b>保证金账户</b>，因为对于港股打新来说，保证金融资功能往往很关键。</p>
           <p>后面的税务信息部分，税务国家选择中国内地，税号填写身份证号，系统会自动生成 W-8 表格；再往后是协议签署和 3 秒人脸验证，完成提交后就进入审核阶段。按视频里的实测，工作日审核速度比较快，大约 2 小时左右就收到了开户成功邮件。</p>
         </section>
 
@@ -521,7 +521,7 @@ const posts = [
           </div>
 
           <div class="mt-4 font-mono text-sm bg-accentDim/20 p-3 rounded">
-            <p class="text-accent">视频实测重点：</p>
+            <p class="text-accent">实测重点：</p>
             <p>01. 汇丰银行 eDDA 授权大约 1 分钟完成</p>
             <p>02. 入金 1 万港币后可解锁终身免佣权益</p>
             <p>03. 英国 iFAST 可通过 SWIFT 电汇入金</p>
@@ -536,13 +536,13 @@ const posts = [
 
         <section class="bg-white/5 p-4 rounded-xl border border-white/10">
           <h3 class="text-accentSoft font-bold mb-2">这家券商有哪些比较有特点的功能？</h3>
-          <p>视频里重点提到了三个功能。第一是 <b>港股打新</b>，现金认购 1 手虽然页面会先显示手续费，但在认购截止之后通常会返还，实际体验下来相当于是现金打新免手续费。第二是 <b>美债极速买入</b>，不只是支持交易，而且无论是极速买入还是普通买入，页面显示的预估费用都为 0。第三是 <b>现金通</b>，类似老虎的钱袋子或长桥的余额通，闲置资金会自动买入货币基金，同时又保留接近现金的流动性，不影响你正常交易股票、债券或期权。</p>
+          <p>重点提到了三个功能。第一是 <b>港股打新</b>，现金认购 1 手虽然页面会先显示手续费，但在认购截止之后通常会返还，实际体验下来相当于是现金打新免手续费。第二是 <b>美债极速买入</b>，不只是支持交易，而且无论是极速买入还是普通买入，页面显示的预估费用都为 0。第三是 <b>现金通</b>，类似老虎的钱袋子或长桥的余额通，闲置资金会自动买入货币基金，同时又保留接近现金的流动性，不影响你正常交易股票、债券或期权。</p>
         </section>
 
         <section>
           <h3 class="text-accentSoft font-bold mb-2">关于加密货币功能和账户分工</h3>
           <p>除了传统港美股和债券功能，复星证券还有一个比较值得单独展开的方向，就是支持加密货币相关交易。不过这一块会涉及合规、税务和资产凭证等更细的问题，所以视频里只是先点到为止，后续更适合单独做一期详细拆解。</p>
-          <p>另外，关于 CRS 和账户管理，视频里也给出了一个比较实用的思路：不要把所有需求都堆在同一个账户里。香港券商更适合承接港股打新和美股长线配置，如果你平时还会高频交易美股，或者经常做日内和波段，那么再额外配一个美国券商会更合理。</p>
+          <p>另外，关于 CRS 和账户管理，也给出了一个比较实用的思路：不要把所有需求都堆在同一个账户里。香港券商更适合承接港股打新和美股长线配置，如果你平时还会高频交易美股，或者经常做日内和波段，那么再额外配一个美国券商会更合理。</p>
         </section>
 
         <section class="border-t border-border pt-4">
@@ -561,7 +561,7 @@ const posts = [
 {
   title: "个人网站搭建教程：AI + GitHub + Cloudflare 三步上线（2026）",
   date: "2026-05-10",
-  category: "各类工具",
+  category: "装备/利器",
   youtubeId: "hHmPAmxaJbc",
   tags: ["个人网站搭建", "AI建站", "GitHub", "Cloudflare Pages"],
   summary: "适合新手的个人网站搭建教程：用 AI 生成网页，上传到 GitHub 托管，再通过 Cloudflare Pages 部署上线，包含准备事项、实操步骤和注意点。",
@@ -2861,7 +2861,7 @@ const posts = [
 {
   title: "如何注册永久免费的超短域名：DigitalPlat、qzz.io 与 Cloudflare 教程（2025）",
   date: "2025-07-23",
-  category: "各类工具",
+  category: "装备/利器",
   youtubeId: "e4TxSoQfbEs",
   tags: ["免费域名", "超短域名", "DigitalPlat", "qzz.io", "us.kg", "Cloudflare"],
   summary: "免费超短域名注册教程：介绍 DigitalPlat 提供的 qzz.io、dpdns.org、us.kg、xx.kg 等域名空间，演示账号注册、GitHub KYC、免费名额获取，以及如何把域名接入 Cloudflare 完成托管与解析。",
@@ -3087,7 +3087,7 @@ const posts = [
 {
   title: "AlipayHK 使用教程：绑定香港银行扣账卡在大陆线上线下消费实测 2025",
   date: "2025-06-16",
-  category: "各类工具",
+  category: "装备/利器",
   youtubeId: "-Yc7ISAXc8E",
   tags: ["AlipayHK", "香港支付宝", "香港扣账卡", "香港银行卡消费", "大陆线上支付", "港币消费"],
   summary: "这篇内容实测演示 AlipayHK 如何用大陆手机号注册、绑定香港银行扣账卡，并在中国大陆完成线上与线下港币消费，同时整理限额、手续费和钱包搭配思路。[web:1][web:8]",
@@ -3125,7 +3125,7 @@ const posts = [
 {
   title: "美区 PayPal 注册教程：机房 IP、Talkatone 号码、虚拟卡与 Wise 开户流程 2025",
   date: "2025-06-10",
-  category: "各类工具",
+  category: "装备/利器",
   youtubeId: "f1DvVphB1Vk",
   tags: ["PayPal美区", "美区PayPal注册", "Talkatone", "Wise美元账户", "虚拟信用卡", "PayPal养号"],
   summary: "这条内容围绕美区 PayPal 注册展开，结合机房 IP、Talkatone 号码、虚拟信用卡和 Wise 美元账户，梳理完整开户流程以及后续养号时需要注意的风险点。[page:1]",
@@ -3456,7 +3456,7 @@ const posts = [
 {
   title: "便宜顶级域名怎么选：Godaddy、NameSilo、Spaceship 对比与 Cloudflare 教程 2025",
   date: "2025-03-15",
-  category: "各类工具",
+  category: "装备/利器",
   youtubeId: "nu37gvl4SJM",
   tags: ["域名注册", "Godaddy", "NameSilo", "Spaceship", "Cloudflare", "顶级域名"],
   summary: "这条内容对比 Godaddy、NameSilo 和 Spaceship 三家域名注册商的价格与服务，并演示域名注册及托管到 Cloudflare 的完整流程，适合想低成本建站的人群。[page:4]",
@@ -3489,7 +3489,7 @@ const posts = [
 {
   title: "免费虚拟信用卡教程：0月租 0年费 0管理费，支持全球支付 2025",
   date: "2025-03-07",
-  category: "各类工具",
+  category: "装备/利器",
   youtubeId: "COzMWhsUn5o",
   tags: ["虚拟信用卡", "免费信用卡", "全球支付", "跨境支付", "线上订阅", "虚拟卡"],
   summary: "这条内容介绍一款可用于全球支付的虚拟信用卡，重点整理注册、申请、开通和使用流程，适合有海外订阅、跨境付款和线上消费需求的用户。[page:3]",
@@ -3720,7 +3720,7 @@ const posts = [
 {
   title: "海外 IP 代理教程：用 Kookeey 搭建纯净 IP 环境与出海网络方案 2025",
   date: "2025-01-16",
-  category: "各类工具",
+  category: "装备/利器",
   youtubeId: "0NwKwPljbM0",
   tags: ["Kookeey", "海外IP代理", "纯净IP", "出海网络", "代理环境", "跨境账号"],
   summary: "这条内容围绕 Kookeey 海外 IP 代理展开，重点解决账号环境不纯净、IP 质量不稳定等问题，并演示如何搭建更适合跨境业务使用的纯净 IP 环境。[page:11]",
@@ -3852,7 +3852,7 @@ const posts = [
 {
   title: "苹果手机科学上网教程：Hiddify 下载、配置与节点测速 2024",
   date: "2024-12-01",
-  category: "各类工具",
+  category: "装备/利器",
   youtubeId: "qUnKtMv8q1g",
   tags: ["Hiddify", "苹果科学上网", "iPhone代理", "机场节点", "翻墙工具", "测速"],
   summary: "这条内容围绕 Hiddify 在苹果手机上的下载、配置和使用展开，并结合节点测速与机场方案，帮助 iPhone 用户快速搭建基础代理环境。[page:15]",

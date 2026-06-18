@@ -385,7 +385,7 @@
 <body class="min-h-screen pb-20">
   <header class="nav-blur sticky top-0 z-50 h-16 flex items-center px-4 md:px-6">
     <div class="w-full max-w-5xl mx-auto flex items-center justify-between gap-3">
-      <a href="index.html" class="btn-back flex items-center gap-2 text-white/80 font-semibold transition-all">
+      <a id="backBtn" href="./index.html" class="btn-back flex items-center gap-2 text-white/80 font-semibold transition-all">
         <i class="fas fa-chevron-left"></i>
         <span>返回实操列表</span>
       </a>
@@ -462,7 +462,7 @@
     </div>
   </main>
 
-  <script src="data.js?v=20260605"></script>
+  <script src="data.js?v=20260618"></script>
 
   <script>
     function getStoredTheme() {
@@ -676,7 +676,14 @@
       });
 
       const urlParams = new URLSearchParams(window.location.search);
-      const videoId = urlParams.get('id');
+      const videoId = urlParams.get('id') || urlParams.get('youtubeId');
+      const fromCategory = urlParams.get('fromCategory');
+
+      // 动态记忆返回按钮的路径：如果从筛选分类中来，点击返回直接回带筛选参数的首页列表
+      const backBtn = document.getElementById('backBtn');
+      if (backBtn && fromCategory) {
+        backBtn.setAttribute('href', `./index.html?category=${encodeURIComponent(fromCategory)}#latestPostsSection`);
+      }
 
       if (!videoId) {
         showError('缺少视频参数 id。', '请从首页文章卡片重新进入详情页。');
@@ -710,7 +717,8 @@
       const descriptionEl = document.getElementById('post-description');
 
       if (titleEl) titleEl.textContent = title;
-      if (categoryEl) categoryEl.textContent = category.replace(/&/g, '/');
+      // 彻底修复错误转义 Bug，直接精准吐出真实分类名
+      if (categoryEl) categoryEl.textContent = category;
       if (dateEl) dateEl.textContent = date;
 
       if (summary && summaryEl) {
