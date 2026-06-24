@@ -1,7 +1,84 @@
 const posts = [
-// 67. 0.6 美元美国实体号码实测：Saily 注册、激活与接码教程（2026）
+
+// 68. 1美元！域名才是真正的互联网资产｜个人网站｜域名邮箱｜内网穿透
 {
-  title: "0.6美元美国实体号码实测：Saily 注册、激活与接码教程",
+  title: "1 美元！域名才是真正的互联网资产｜个人网站｜域名邮箱｜内网穿透（2026）",
+  date: "2026-06-24",
+  category: "装备/利器",
+  youtubeId: "YOUR_YOUTUBE_ID",
+  tags: ["域名", "个人网站", "域名邮箱", "内网穿透", "Cloudflare", "Spaceship", "建站"],
+  summary: "为什么说域名比 VPS 和 eSIM 更值得长期持有？这期从个人网站、域名邮箱、内网穿透和实际购买流程四个角度，聊清楚域名的长期价值。",
+  affiliate: {
+    label: "Spaceship 邀请链接",
+    url: "https://spaceship.sjv.io/c/7415492/1794549/21274"
+  },
+  description: `
+    <div class="space-y-6 text-dim leading-relaxed">
+      <section>
+        <h3 class="text-accent font-bold text-lg mb-2">为什么这期要聊域名？</h3>
+        <p>很多人做数字出海，第一反应是先准备 VPS 和海外 eSIM。它们当然重要，但解决的更多是访问、注册和连接问题。</p>
+        <p>而域名不一样。它是你真正可以长期掌控、持续续费、不断叠加内容和品牌价值的数字资产。</p>
+      </section>
+
+      <section class="bg-white/5 p-4 rounded-xl border border-white/10">
+        <h3 class="text-accentSoft font-bold mb-3">这期视频主要讲了四件事</h3>
+        <ul class="list-disc pl-5 mt-2 space-y-1">
+          <li><b>个人网站：</b>把内容沉淀到自己的独立站，而不是完全依赖平台。</li>
+          <li><b>域名邮箱：</b>提升专业度和信任感，适合长期做项目和品牌。</li>
+          <li><b>内网穿透：</b>配合 Cloudflare Tunnel 等工具，给 NAS 和自建服务一个固定入口。</li>
+          <li><b>购买建议：</b>不要只看首年低价，更要看续费和控制权。</li>
+        </ul>
+      </section>
+
+      <section>
+        <h3 class="text-accentSoft font-bold mb-2">域名为什么比平台更重要？</h3>
+        <p>社交媒体账号、内容平台和第三方服务，本质上都属于别人。规则会变，流量会变，账号状态也可能随时变化。</p>
+        <p>只有当你把内容、入口和身份都绑定在自己的域名上，主动权才真正回到自己手里。</p>
+      </section>
+
+      <section>
+        <h3 class="text-accentSoft font-bold mb-2">域名最实用的三个方向</h3>
+        <p>第一是建站，用来沉淀博客、教程、作品或项目页面；第二是域名邮箱，用来对接客户、联盟和商务合作；第三是做内网穿透，让远程访问更稳定、更好记。</p>
+        <p>这三种用途看起来不一样，但底层都指向同一件事：让你的数字身份和基础设施脱离平台依赖。</p>
+      </section>
+
+      <section class="border-t border-border pt-4">
+        <h3 class="text-success font-bold mb-2">买域名最容易踩的坑</h3>
+        <div class="font-mono text-sm space-y-2">
+          <p>1. <b>只看首年价格：</b>首年便宜不代表长期便宜，重点要看续费。</p>
+          <p>2. <b>迷信免费二级域名：</b>测试可以，长期运营不适合。</p>
+          <p>3. <b>忽略控制权：</b>真正的资产不是平台送你的二级域名，而是你自己持有的一级域名。</p>
+          <p>4. <b>不做后续托管：</b>买完后尽快接入 Cloudflare，会省掉后面很多麻烦。</p>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="text-accentSoft font-bold mb-2">为什么用 Spaceship 演示？</h3>
+        <p>因为它首年价格有竞争力，续费也相对透明，比较适合拿来做长期持有而不是一次性薅羊毛。</p>
+        <p>而且对国内用户来说，购买流程相对顺畅，后面再接 Cloudflare 也很方便。</p>
+      </section>
+
+      <section class="bg-white/5 p-4 rounded-xl border border-white/10">
+        <h3 class="text-accentSoft font-bold mb-2">相关链接</h3>
+        <p>
+          Spaceship 邀请链接：
+          <a href="https://spaceship.sjv.io/c/7415492/1794549/21274" target="_blank" rel="noopener noreferrer" class="text-accent underline underline-offset-4">
+            点击注册
+          </a>
+        </p>
+      </section>
+
+      <section>
+        <h3 class="text-accentSoft font-bold mb-2">这期内容的核心结论</h3>
+        <p>VPS 可以换，IP 可以换，邮箱服务商可以换，平台也可以换，但只要域名一直续费，它就始终属于你。</p>
+        <p>从长期来看，域名不是一个网址，而是你在互联网里最值得尽早拥有的一块数字地盘。</p>
+      </section>
+    </div>
+  `
+},
+//  67. 0.6 美元美国实体号码实测：Saily 注册、激活与接码教程（2026）
+{
+  title: "0.6 美元美国实体号码实测：Saily 注册、激活与接码实测教程（2026）",
   date: "2026-06-17",
   category: "手机/eSIM",
   youtubeId: "_rhWrsQMJgQ",

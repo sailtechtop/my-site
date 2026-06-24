@@ -831,13 +831,13 @@
             <p class="text-sm text-dim mt-1">@vipxiaofanchuan</p>
           </a>
 
-          <a class="card community-card" href="https://www.youtube.com/@CNXiaoFanChuan" target="_blank" rel="noopener noreferrer">
+          <a class="card community-card" href="https://www.youtube.com/@sailtechtop" target="_blank" rel="noopener noreferrer">
             <div class="top">
               <span class="icon-badge"><i class="fa-brands fa-youtube"></i></span>
               <span class="count-badge">视频</span>
             </div>
             <h3>YouTube 频道</h3>
-            <p class="text-sm text-dim mt-1">@CNXiaoFanChuan</p>
+            <p class="text-sm text-dim mt-1">@sailtechtop</p>
           </a>
 
           <a class="card community-card" href="mailto:contact@sailtech.top">
@@ -923,9 +923,9 @@
             <span>Telegram</span>
             <span class="text-xs text-muted font-mono group-hover:text-text transition-colors">@vipxiaofanchuan</span>
           </a>
-          <a href="https://www.youtube.com/@CNXiaoFanChuan" target="_blank" rel="noopener noreferrer" class="flex justify-between items-center w-full group">
+          <a href="https://www.youtube.com/@sailtechtop" target="_blank" rel="noopener noreferrer" class="flex justify-between items-center w-full group">
             <span>YouTube</span>
-            <span class="text-xs text-muted font-mono group-hover:text-text transition-colors">@CNXiaoFanChuan</span>
+            <span class="text-xs text-muted font-mono group-hover:text-text transition-colors">@sailtechtop</span>
           </a>
           <a href="mailto:contact@sailtech.top" class="flex justify-between items-center w-full group">
             <span>商务合作</span>
@@ -963,7 +963,7 @@
       if (titleEl) titleEl.textContent = `分类筛选：${filterCategory} (${displayPosts.length} 篇)`;
     }
 
-    const latestPosts = displayPosts.slice(0, 6);
+    const latestPosts = displayPosts.slice(0, 10);
 
     function detailsUrl(post) {
       let url = `./details.html?id=${encodeURIComponent(post.youtubeId || '')}`;
